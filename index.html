@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Geopolitical Football Compass — 2026 World Cup</title>
+  <meta name="description" content="A geopolitical guide to the 2026 World Cup — who to root for based on colonial history, active conflicts, and political context." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.7.0/dist/tabler-icons.min.css" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#fff;--bg2:#f8fafc;--bg3:#f1f5f9;
+      --tx:#0f172a;--tx2:#475569;--tx3:#94a3b8;
+      --br:rgba(0,0,0,.10);--br2:rgba(0,0,0,.16);
+      --r:10px;--rs:6px;
+      --s-bg:#f0fdf4;--s-tx:#15803d;--s-br:#bbf7d0;
+      --d-bg:#fef2f2;--d-tx:#dc2626;--d-br:#fecaca;
+      --w-bg:#fffbeb;--w-tx:#b45309;--w-br:#fde68a;
+      --i-bg:#eff6ff;--i-tx:#1d4ed8;--i-br:#bfdbfe;
+      --g-bg:#f8fafc;--g-tx:#64748b;--g-br:#e2e8f0;
+      --l-bg:#f0f9ff;--l-tx:#0369a1;--l-br:#bae6fd;
+    }
+    @media(prefers-color-scheme:dark){:root{
+      --bg:#0f172a;--bg2:#1e293b;--bg3:#273549;
+      --tx:#f1f5f9;--tx2:#94a3b8;--tx3:#64748b;
+      --br:rgba(255,255,255,.09);--br2:rgba(255,255,255,.15);
+      --s-bg:#052e16;--s-tx:#86efac;--s-br:#166534;
+      --d-bg:#450a0a;--d-tx:#fca5a5;--d-br:#991b1b;
+      --w-bg:#3b1f06;--w-tx:#fde68a;--w-br:#92400e;
+      --i-bg:#172554;--i-tx:#93c5fd;--i-br:#1e40af;
+      --g-bg:#1e293b;--g-tx:#94a3b8;--g-br:#334155;
+      --l-bg:#0c2740;--l-tx:#7dd3fc;--l-br:#075985;
+    }}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.6}
+    .wrap{max-width:660px;margin:0 auto;padding:1.75rem 1.25rem 4rem}
+    .eyebrow{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--tx3);margin-bottom:5px}
+    h1{font-size:clamp(19px,5vw,25px);font-weight:600;margin-bottom:6px}
+    .subtitle{font-size:14px;color:var(--tx2);margin-bottom:2.25rem;line-height:1.55}
+
+    .tabs{display:flex;gap:4px;background:var(--bg2);border-radius:var(--r);padding:4px;margin-bottom:1.5rem}
+    .tab{flex:1;padding:8px;font-size:13px;font-weight:500;font-family:inherit;background:transparent;border:none;border-radius:var(--rs);cursor:pointer;color:var(--tx2);transition:all .15s}
+    .tab.active{background:var(--bg);color:var(--tx);box-shadow:0 1px 3px rgba(0,0,0,.1)}
+    .tab-panel{display:none}.tab-panel.active{display:block}
+
+    /* verdict card */
+    .verdict{display:none;border-radius:var(--r);border:2px solid;padding:18px 20px;margin-bottom:1.5rem}
+    .verdict.show{display:block}
+    .v-close{float:right;background:none;border:none;cursor:pointer;font-size:18px;opacity:.5;color:inherit;margin:-2px -4px 0 0;line-height:1}
+    .v-close:hover{opacity:1}
+    .v-eye{font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;margin-bottom:7px;display:flex;align-items:center;gap:6px}
+    .v-teams{font-size:13px;font-weight:500;opacity:.75;margin-bottom:10px}
+    .v-label{font-size:20px;font-weight:600;margin-bottom:10px;line-height:1.25}
+    .v-text{font-size:14px;line-height:1.7;margin-bottom:10px}
+    .v-section{font-size:13px;line-height:1.6;border-top:1px solid rgba(128,128,128,.18);padding-top:10px;margin-top:6px}
+    .v-section-label{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;opacity:.7;margin-bottom:3px}
+    .result-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .result-score{font-size:18px;font-weight:700;font-variant-numeric:tabular-nums}
+    .oc{font-size:12px;font-weight:700;padding:3px 9px;border-radius:20px;border:1px solid}
+    .oc-won{background:var(--s-bg);color:var(--s-tx);border-color:var(--s-br)}
+    .oc-drew{background:var(--w-bg);color:var(--w-tx);border-color:var(--w-br)}
+    .oc-lost{background:var(--d-bg);color:var(--d-tx);border-color:var(--d-br)}
+    .oc-ref{background:var(--i-bg);color:var(--i-tx);border-color:var(--i-br)}
+    .oc-free{background:var(--g-bg);color:var(--g-tx);border-color:var(--g-br)}
+
+    /* schedule */
+    .day-block{margin-bottom:1.25rem}
+    .day-label{font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--tx3);margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid var(--br);display:flex;align-items:center;gap:8px}
+    .day-label.today{color:var(--i-tx)}
+    .day-stats{margin-left:auto;display:flex;gap:5px;font-size:11px;font-weight:500;letter-spacing:0;text-transform:none}
+    .match-row{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;padding:9px 12px;border-radius:var(--rs);border:1px solid var(--br);border-left-width:3px;margin-bottom:5px;background:var(--bg);cursor:pointer;transition:background .12s}
+    .match-row:hover{background:var(--bg2)}
+    .match-row.past{opacity:.7}
+    .match-teams{font-size:13px;font-weight:500;line-height:1.4}
+    .match-right{display:flex;align-items:center;gap:7px;flex-shrink:0}
+    .match-group{font-size:11px;color:var(--tx3)}
+    .match-score{font-size:12px;font-weight:600;color:var(--tx2);font-variant-numeric:tabular-nums}
+    .mini-oc{font-size:10px;font-weight:700;padding:1px 5px;border-radius:12px;border:1px solid;white-space:nowrap}
+
+    .sc-green{border-left-color:#16a34a}.sc-solidarity{border-left-color:#0369a1}
+    .sc-red{border-left-color:#dc2626}.sc-amber{border-left-color:#d97706}
+    .sc-purple{border-left-color:#eab308}.sc-gray{border-left-color:#64748b}
+    .sc-info{border-left-color:#0ea5e9}
+    .sc-free{border-left-color:var(--br2)}
+
+    /* analyzer */
+    .match-grid{display:grid;grid-template-columns:1fr 24px 1fr;gap:8px;align-items:start;margin-bottom:14px}
+    .sep{text-align:center;padding-top:28px;color:var(--tx3);font-size:15px}
+    label{display:block;font-size:12px;font-weight:500;color:var(--tx2);margin-bottom:5px}
+    select,input{width:100%;padding:8px 11px;font-size:14px;font-family:inherit;background:var(--bg2);color:var(--tx);border:1px solid var(--br2);border-radius:var(--rs);outline:none}
+    select:focus,input:focus{border-color:#3b82f6;box-shadow:0 0 0 3px rgba(59,130,246,.15)}
+    .team-meta{margin-top:5px;min-height:20px}
+    .badges{display:flex;flex-wrap:wrap;gap:3px;margin-bottom:3px}
+    .badge{font-size:11px;padding:1px 7px;border-radius:20px;font-weight:500;border:1px solid}
+    .bd{background:var(--d-bg);color:var(--d-tx);border-color:var(--d-br)}
+    .bw{background:var(--w-bg);color:var(--w-tx);border-color:var(--w-br)}
+    .bi{background:var(--i-bg);color:var(--i-tx);border-color:var(--i-br)}
+    .bl{background:var(--l-bg);color:var(--l-tx);border-color:var(--l-br)}
+    .bp{background:#f5f3ff;color:#5b21b6;border-color:#ddd6fe}
+    .bo{background:#fff7ed;color:#c2410c;border-color:#fed7aa}
+    @media(prefers-color-scheme:dark){.bp{background:#2e1065;color:#c4b5fd;border-color:#4c1d95}
+    .bo{background:#431407;color:#fdba74;border-color:#9a3412}}
+    .team-note{font-size:11px;color:var(--tx2);line-height:1.4}
+    .ref-row{margin-bottom:14px}
+    .ref-hint{font-size:11px;color:var(--tx3);margin-top:4px}
+    .go-btn{width:100%;padding:12px;font-size:14px;font-weight:600;font-family:inherit;background:#1d4ed8;color:#fff;border:none;border-radius:var(--r);cursor:pointer;margin-bottom:1.5rem;transition:background .15s}
+    .go-btn:hover:not(:disabled){background:#1e40af}
+    .go-btn:disabled{background:var(--bg3);color:var(--tx3);cursor:not-allowed}
+
+    .rules-box{border:1px solid var(--br);border-radius:var(--r);overflow:hidden;margin-bottom:1rem}
+    .rule{display:flex;gap:11px;padding:8px 15px;border-bottom:1px solid var(--br);font-size:13px;color:var(--tx);align-items:flex-start}
+    .rule:last-child{border-bottom:none}
+    .ri{font-size:14px;color:var(--tx3);margin-top:2px;flex-shrink:0}
+    .rn{font-size:11px;color:var(--tx3);display:block;margin-top:1px}
+    .legend{margin-bottom:1rem;font-size:11px;color:var(--tx3)}
+    .legend-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:5px;align-items:center}
+    .legend-label{font-weight:600;color:var(--tx2);margin-right:2px;white-space:nowrap}
+    .lc{display:inline-flex;align-items:center;gap:4px;padding:2px 7px 2px 9px;border-radius:var(--rs);border:1px solid var(--br);border-left-width:3px;white-space:nowrap}
+    .lc.sc-green{border-left-color:#16a34a}.lc.sc-amber{border-left-color:#d97706}
+    .lc.sc-red{border-left-color:#dc2626}.lc.sc-purple{border-left-color:#eab308}
+    .lc.sc-gray{border-left-color:#64748b}.lc.sc-info{border-left-color:#0ea5e9}
+    footer{padding-top:1.5rem;border-top:1px solid var(--br)}
+    footer p{font-size:12px;color:var(--tx3);line-height:1.6;margin-bottom:5px}
+    footer a{color:var(--tx2)}
+    @media(max-width:480px){.match-grid{grid-template-columns:1fr 18px 1fr;gap:5px}}
+  
+    .fc{display:inline-block;font-size:9px;font-weight:700;padding:0 4px;height:16px;line-height:16px;
+        border-radius:3px;background:rgba(128,128,128,.18);color:var(--tx2);
+        letter-spacing:.04em;vertical-align:middle;margin-right:3px;font-style:normal}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">2026 World Cup</p>
+  <h1>The Geopolitical Football Compass</h1>
+  <p class="subtitle">A geopolitical guide to the 2026 World Cup — who to root for, based on colonial history, active conflicts, far-right governments, and political context. Because football is never just football.</p>
+  <p style="font-size:12px;color:var(--tx3);line-height:1.6;margin-top:10px;margin-bottom:1.75rem;padding:10px 12px;background:var(--bg2);border-radius:var(--rs);border-left:3px solid var(--br2)"><strong style="color:var(--tx2)">A note on what this means:</strong> rooting <em>against</em> a team here is about governments, colonial history, and political structures — not the people. Every country we flag has people within it resisting the very things we criticize. The Americans marching against imperialism, the Germans confronting their history, the Argentines who voted against Milei, the South Africans fighting Afrophobia from the inside — this compass is with them. What we criticize is power, and the degree to which it goes unchallenged.</p>
+
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('schedule')"><i class="ti ti-calendar" style="margin-right:5px"></i>Schedule</button>
+    <button class="tab" onclick="switchTab('analyze')"><i class="ti ti-search" style="margin-right:5px"></i>Custom match</button>
+    <button class="tab" onclick="switchTab('rules')"><i class="ti ti-list-check" style="margin-right:5px"></i>Rules</button>
+  </div>
+
+  <div class="verdict" id="verdict"></div>
+
+  <div class="tab-panel active" id="tab-schedule">
+    <div class="legend">
+      <div class="legend-row">
+        <span class="legend-label">Upcoming &amp; info window:</span>
+        <span class="lc sc-green">clear pick</span>
+        <span class="lc sc-amber">reluctant</span>
+        <span class="lc sc-red">bombing</span>
+        <span class="lc sc-purple">root: referee</span>
+        <span class="lc sc-gray">TV off</span>
+        <span class="lc sc-info">free game</span>
+      </div>
+      <div class="legend-row" style="margin-top:4px">
+        <span class="legend-label">Past results:</span>
+        <span class="mini-oc oc-won" style="font-size:10px">✓ won</span>
+        <span class="mini-oc oc-drew" style="font-size:10px">~ drew</span>
+        <span class="mini-oc oc-lost" style="font-size:10px">✗ lost</span>
+        <span class="mini-oc" style="font-size:10px;background:var(--g-bg);color:var(--g-tx);border:1px solid var(--g-br);border-radius:12px;padding:1px 5px">~ drew (ref)</span>
+        <span class="mini-oc" style="font-size:10px;background:var(--g-bg);color:var(--g-tx);border:1px solid var(--g-br);border-radius:12px;padding:1px 5px">📺 TV off</span>
+        <span class="mini-oc oc-lost" style="font-size:10px">✗ bad result</span>
+      </div>
+    </div>
+    <div id="sched"></div>
+  </div>
+
+  <div class="tab-panel" id="tab-analyze">
+    <div class="match-grid">
+      <div>
+        <label>Team 1</label>
+        <select id="t1" onchange="onTC()"><option value="">Select...</option></select>
+        <div class="team-meta" id="meta1"></div>
+      </div>
+      <div class="sep">×</div>
+      <div>
+        <label>Team 2</label>
+        <select id="t2" onchange="onTC()"><option value="">Select...</option></select>
+        <div class="team-meta" id="meta2"></div>
+      </div>
+    </div>
+    <div class="ref-row">
+      <label><i class="ti ti-whistle" style="margin-right:5px"></i>Referee's country <span style="font-weight:400;color:var(--tx3)">(optional — for when two hegemons or two "always against" teams meet)</span></label>
+      <input id="ref" placeholder="e.g. Tanzania, Senegal, Indonesia..." oninput="clearV()" />
+    </div>
+    <button class="go-btn" id="go" onclick="analyze()" disabled>
+      <i class="ti ti-search" style="margin-right:7px"></i>Analyze this match
+    </button>
+  </div>
+
+  <div class="tab-panel" id="tab-rules">
+    <div style="font-size:13px;color:var(--tx2);margin-bottom:1.25rem;line-height:1.6">Rules apply in priority order — higher rules override lower ones. The underdog is auto-detected from FIFA rankings, history, and political context.</div>
+    <div style="font-size:12px;color:var(--tx3);line-height:1.6;margin-bottom:1.5rem;padding:10px 12px;background:var(--bg2);border-radius:var(--rs);border-left:3px solid var(--br2)"><strong style="color:var(--tx2)">Important:</strong> rooting against a team means rooting against government action, colonial structures, and policies — not against people. Within every country we criticize, there is resistance. The compass is with those people.</div>
+    <div class="rules-box">
+      <div class="rule"><i class="ti ti-circle-x ri" style="color:var(--d-tx)"></i><div><span>Germany is playing → always against, no exceptions</span></div></div>
+      <div class="rule"><i class="ti ti-circle-x ri" style="color:var(--d-tx)"></i><div><span>Argentina is playing → always against, no exceptions</span><span class="rn">1978 WC hosted under Videla's dictatorship, used as propaganda while 30,000 people were disappeared. Milei's current government doubles down.</span></div></div>
+      <div class="rule"><i class="ti ti-circle-x ri" style="color:var(--d-tx)"></i><div><span>The US is playing → never root for the US. Ever.</span><span class="rn">Against another "always against" team? Root for the referee.</span></div></div>
+      <div class="rule"><i class="ti ti-device-tv-off ri" style="color:var(--tx2)"></i><div><span>Argentina × Germany → turn off the TV</span></div></div>
+      <div class="rule"><i class="ti ti-device-tv-off ri" style="color:var(--tx2)"></i><div><span>Both teams geopolitically compromised + referee is hegemonic/colonial/cursed → turn off the TV</span><span class="rn">When neither side is clean and even the referee is from a problematic country (not Global South), there is genuinely no one to root for. Grab a beer, life goes on.</span></div></div>
+      <div class="rule"><i class="ti ti-flag ri" style="color:var(--i-tx)"></i><div><span>Two "always against" teams → root for the referee (Global South)</span></div></div>
+      <div class="rule"><i class="ti ti-flag ri" style="color:var(--i-tx)"></i><div><span>One "always against" team + opponent also significantly problematic → root for the referee</span><span class="rn">e.g. USA vs Paraguay: USA always against, but Paraguay is Trump's closest Latin American ally. No clean side.</span></div></div>
+      <div class="rule"><i class="ti ti-shield-half ri" style="color:var(--l-tx)"></i><div><span>A team is being actively bombed → root for them</span><span class="rn">Overrides hegemonic/colonial history. Does not override "always against" absolutes.</span></div></div>
+      <div class="rule"><i class="ti ti-bomb ri" style="color:var(--d-tx)"></i><div><span>A team is actively bombing civilians → root against them</span></div></div>
+      <div class="rule"><i class="ti ti-flag ri" style="color:var(--i-tx)"></i><div><span>Bomber vs major colonial/hegemonic power → root for the referee</span><span class="rn">e.g. Saudi Arabia vs Spain or France — neither side is clean. Active bombing doesn't make a colonial empire the right pick.</span></div></div>
+      <div class="rule"><i class="ti ti-crown ri" style="color:var(--w-tx)"></i><div><span>A team is a hegemonic power or historical colonizer → root for the other</span></div></div>
+      <div class="rule"><i class="ti ti-anchor ri" style="color:var(--w-tx)"></i><div><span>Former colony playing its specific colonizer → extra weight against the colonizer</span><span class="rn">e.g. Ghana vs England, Uruguay vs Spain, Senegal vs France, Algeria vs France, Cabo Verde vs Portugal</span></div></div>
+      <div class="rule"><i class="ti ti-alert-triangle ri" style="color:var(--w-tx)"></i><div><span>A team has a far-right government → root against them</span><span class="rn">Current cases in this WC: Netherlands (Wilders), Austria (FPÖ/Kickl), Sweden (SD-backed), Croatia (HDZ+Homeland Movement coalition), Czechia (Babiš/ANO+SPD).</span></div></div>
+      <div class="rule"><i class="ti ti-flag ri" style="color:var(--i-tx)"></i><div><span>Two hegemonic powers → root for the referee (if from the Global South)</span></div></div>
+      <div class="rule"><i class="ti ti-trophy ri" style="color:var(--s-tx)"></i><div><span>One team is the underdog (auto-detected) → root for them as tiebreaker</span><span class="rn">Based on FIFA ranking gap, first-time qualification, nation size, and historical/political context.</span></div></div>
+      <div class="rule"><i class="ti ti-heart ri" style="color:var(--s-tx)"></i><div><span>No flags → free game! Root for the best football.</span></div></div>
+    </div>
+    <div style="font-size:12px;color:var(--tx3);line-height:1.6">
+      <strong style="color:var(--tx2)">On NATO and anti-Western positioning:</strong> Being anti-NATO or skeptical of US-European hegemony is not a problem from this compass's perspective — it's a mainstream position in the Latin American and Global South left. Russia's war on Ukraine is condemned because it bombs civilians, not because Russia resists Western hegemonic expansion, which has legitimate historical roots. These are different things.<br><br>
+      <strong style="color:var(--tx2)">On FIFA:</strong> Gianni Infantino received Putin's Order of Friendship in 2019. He awarded the inaugural FIFA Peace Prize to Donald Trump in December 2025. He was made honorary citizen of Reggio Calabria — Italy's most mafia-dominated city — by a mayor under investigation for organized crime. He gave Saudi Arabia the 2034 World Cup without a competitive process. He made Trump chair of the organizing taskforce, headquartered in Trump Tower. He has been re-elected unopposed twice and will run again in 2027. Governance expert Mark Pieth: "Blatter is a strange animal — but compared to what is going on inside FIFA now, the dirty tricks of his era are only petty stuff. Infantino copies the autocrats he cosies up to. He loves Trump, he is only driven by power and money, and he has no need for democracy in FIFA." The 2026 WC is projected to earn $9 billion. The 2026 WC is, in one scholar's words, "the apotheosis of sportswashing." None of that stops the games from being beautiful, or from being a site of real political meaning for billions of people — which is exactly why it's worth paying attention.
+    </div>
+  </div>
+
+  <footer>
+    <p>⚠️ Work in progress — rules, data, and verdicts are being updated as the tournament unfolds.</p>
+    <p>The views expressed here reflect the personal opinions of the author. Football is never just football.</p>
+    <p>Open source. Add rules, fix history, send a PR. <a href="https://github.com/global-south-fc/worldcupcompass" target="_blank" rel="noopener">github.com/global-south-fc/worldcupcompass</a></p>
+  </footer>
+</div>
+
+<script>
+
+// Flag emoji → country code badge. No Unicode regex (ES5-safe).
+function flagToCode(f){
+  if(!f) return '';
+  var pts=[];
+  for(var i=0;i<f.length;){
+    var cp=f.codePointAt(i);
+    pts.push(cp);
+    i+=cp>0xFFFF?2:1;
+  }
+  // Regional indicator pairs: U+1F1E6-U+1F1FF → A-Z
+  if(pts.length>=2&&pts[0]>=0x1F1E6&&pts[0]<=0x1F1FF&&pts[1]>=0x1F1E6&&pts[1]<=0x1F1FF)
+    return String.fromCharCode(pts[0]-0x1F1E6+65)+String.fromCharCode(pts[1]-0x1F1E6+65);
+  // Tag-sequence flags (0x1F3F4 + tag letters ending 0xE007F)
+  // Detect by tag letters: gb+sct=SCO, gb+eng=ENG, gb+wls=WAL
+  if(pts[0]===0x1F3F4&&pts.length>4){
+    var tags=pts.slice(1).filter(function(p){return p>=0xE0061&&p<=0xE007A;})
+               .map(function(p){return String.fromCharCode(p-0xE0000);}).join('');
+    if(tags==='gbsct') return 'SCO';
+    if(tags==='gbeng') return 'ENG';
+    if(tags==='gbwls') return 'WAL';
+  }
+  return '';
+}
+function esc(s){return s.replace(/'/g,"\\'")}
+function rf(flag){
+  if(!flag) return '';
+  var code=flagToCode(flag);
+  return '<em class="fc">'+(code||'?')+'</em>';
+}
+// Process a string that may contain flag emoji, replacing each with rf()
+function rfStr(s){
+  if(!s) return '';
+  var result='',i=0,chars=Array.from(s);
+  while(i<chars.length){
+    var cp=chars[i].codePointAt(0);
+    if(cp>=0x1F1E6&&cp<=0x1F1FF&&i+1<chars.length){
+      var cp2=chars[i+1].codePointAt(0);
+      if(cp2>=0x1F1E6&&cp2<=0x1F1FF){result+=rf(chars[i]+chars[i+1]);i+=2;continue;}
+    }
+    if(cp===0x1F3F4&&i+1<chars.length){
+      // Collect full tag sequence
+      var seq=chars[i],j=i+1;
+      while(j<chars.length&&chars[j].codePointAt(0)!==0xE007F){seq+=chars[j];j++;}
+      if(j<chars.length){seq+=chars[j];j++;}
+      result+=rf(seq);i=j;continue;
+    }
+    result+=chars[i];i++;
+  }
+  return result;
+}
+
+const TODAY="2026-06-23";
+
+const COLONIAL={
+  "Algeria":["France"],"Morocco":["France","Spain"],"Tunisia":["France"],
+  "Senegal":["France"],"Côte d'Ivoire":["France"],"Guinea":["France"],"Haiti":["France"],
+  "Congo DR":["Belgium"],
+  "Angola":["Portugal"],"Cabo Verde":["Portugal"],"Brazil":["Portugal"],
+  "Nigeria":["England"],"Ghana":["England"],"South Africa":["England"],
+  "Egypt":["England"],"Iraq":["England"],"Jordan":["England"],
+  "Australia":["England"],"New Zealand":["England"],
+  "Mexico":["Spain"],"Colombia":["Spain"],"Ecuador":["Spain"],
+  "Uruguay":["Spain"],"Paraguay":["Spain"],"Panama":["Spain"],
+  "Korea Republic":["Japan"],
+  "Curaçao":["Netherlands"],
+  "Uzbekistan":["Russia"],
+};
+
+// rank: FIFA World Ranking April 1 2026 (official pre-tournament ranking, source: FIFA.com)
+// uNote: historical/political underdog context independent of ranking
+const TEAMS=[
+  {n:"Brazil",        f:"🇧🇷",r:"South America",  t:[],                              rank:5,  uNote:null,note:"This compass was built from a Brazilian perspective. Lula returned to power in January 2023, defeating Bolsonaro's far-right government after a razor-thin election and a January 8 coup attempt by Bolsonaro supporters who stormed the parliament and presidential palace. The government prosecuted and jailed Bolsonaro for plotting the coup — a powerful signal that democracy can fight back. Brazil chaired BRICS 2025, hosted COP30 in Belém, and hosted the BRICS+ summit in Rio in July 2025. Lula's doctrine: 'Active Non-Alignment' — refusing to choose between the US and China. When Trump slapped tariffs on Brazil, Brasília refused to be bullied. The administration presented a new world map with the south pointing up and Brazil at the center. Lula is running for a 4th term in October 2026. The country that invented jogo bonito — beautiful football — is also trying to build a more beautiful world order. But this compass demands honesty, and Haiti demands it especially: from 2004 to 2017, Brazil commanded MINUSTAH — the UN 'stabilization' mission sent to Haiti after the US and France engineered the removal of President Jean-Bertrand Aristide, Haiti's first democratically elected leader. Many Haitians experienced MINUSTAH not as peacekeeping but as occupation in service of Western-backed regime change. Nepali troops under the MINUSTAH umbrella introduced cholera to Haiti in 2010, triggering an epidemic that killed over 10,000 people and infected nearly a million — the UN denied responsibility for years. Brazilian soldiers were implicated in sexual abuse of Haitian civilians. Brazil led this mission under Lula's government, treating it as proof of Brazil's readiness for global responsibility. Haiti should be Brazil's closest ally — two Black majority countries in the Americas, both scarred by slavery, colonialism, and imperial interference. Instead, Brazil pointed a gun at the door. That contradiction lives in this match."},
+  {n:"Argentina",     f:"🇦🇷",r:"South America",  t:["special"],                     rank:3,  uNote:null,note:"Eternal rivals — this compass was built from a Brazilian perspective. The 1978 World Cup was hosted by the military junta of Jorge Rafael Videla while the regime was actively disappearing tens of thousands of people. Detention centers operated within kilometers of World Cup stadiums. The Dirty War (Guerra Sucia, 1976–1983): the military junta disappeared an estimated 30,000 people — labor organizers, students, journalists, teachers, and their families. Babies born to imprisoned women were taken and given to regime-connected families; hundreds of these stolen children have been found over the decades by the Grandmothers of Plaza de Mayo. Operation Condor: Argentina was a central node in the CIA-coordinated network of South American military dictatorships that hunted down and murdered political exiles across the continent. Videla hosted the 1978 WC, Argentina won it, and the regime used the trophy as propaganda while the torture continued. Under Milei (elected 2023): Javier Milei is the most radical experiment in anarcho-capitalism in modern democratic history — chainsaw metaphors made literal policy. He dismantled the Ministry of Women, attacked public universities, slashed social spending, and realigned Argentina emphatically with Trump's US and Netanyahu's Israel, away from Latin American regional solidarity — MERCOSUR, CELAC, BRICS all treated as obstacles. The country that produced Che Guevara now exports the ideological opposite. Football: Maradona's Hand of God (1986) was political — a fist against England a few years after the Malvinas. Diego was the greatest and most political footballer of the 20th century, from a Buenos Aires slum, the antithesis of the junta's Argentina. Messi closed the circle in 2022 — but Messi is not Argentina's government."},
+  {n:"Uruguay",       f:"🇺🇾",r:"South America",  t:[],                              rank:17, uNote:null,note:"José 'Pepe' Mujica — president 2010–2015 — is one of the most remarkable political figures in modern Latin American history: a Tupamaro guerrilla who survived 14 years in solitary confinement under the military dictatorship (1973–1985), then became a head of state who lived in a farmhouse, donated most of his salary to charity, and legalized cannabis, same-sex marriage, and abortion in a single term. Called 'the world's poorest president' — he refused the presidential palace. Mujica represented a Latin American left rooted in genuine sacrifice, not performative radicalism. Uruguay's military dictatorship (1973–1985) was backed by the US under Operation Condor — the CIA-coordinated campaign across South America to disappear, torture, and kill leftists. An estimated 200 Uruguayans were disappeared. Post-dictatorship, Uruguay built one of the most progressive legal frameworks in Latin America: universal healthcare, strong public education, early LGBTQ+ rights, drug decriminalization. The Frente Amplio coalition that produced Mujica represents a broad left movement spanning feminists, unions, former guerrillas, and social democrats — still one of the most organized and culturally rooted left coalitions on the continent. Uruguay is also the country that gave football Obdulio Varela, captain of the 1950 Maracanazo — one of the greatest upsets in football history."},
+  {n:"Colombia",      f:"🇨🇴",r:"South America",  t:[],                              rank:13, uNote:null,note:"The Muisca (Chibcha) confederation in the highlands of what is now Colombia was the source of the El Dorado legend — their ritual of covering a chief in gold dust and submerging him in Lake Guatavita brought Spanish conquistadors who destroyed the civilization searching for a city of gold that never existed. Part of Gran Colombia after independence, Colombia then fragmented; Panama was separated in 1903 with US intervention (see Panama's entry). The assassination of Jorge Eliécer Gaitán — populist politician, April 9, 1948, shot in Bogotá — triggered El Bogotazo: days of urban fury that killed thousands and ignited La Violencia (1948–1958), a civil war between Liberals and Conservatives that killed over 200,000 people. From that wreckage the FARC was born in 1964 — guerrillas with a genuine political program — land reform, peasant rights, fighting extreme inequality — who over decades became increasingly funded by cocaine, which transformed their character and methods. At their worst: massacres, kidnappings, terror. At their origin: a response to real conditions of poverty and state violence that were never addressed. The paramilitaries (AUC) rose as the right-wing mirror — death squads that massacred communities suspected of guerrilla sympathy, with tacit or explicit state backing. 'Falsos positivos' (false positives): Colombian military units systematically killed civilians — often poor, unemployed young men — dressed them in guerrilla clothing, and reported them as combat kills to claim performance bonuses. Thousands of documented cases. Pablo Escobar and the Medellín Cartel made Colombia synonymous with cocaine in the 1980s–90s; at the height of his power Escobar bombed a passenger plane, assassinated a presidential candidate, and bombed Bogotá continuously. Plan Colombia (2000): the US pumped billions into Colombian military and counter-narcotics operations — the coca kept flowing, the violence shifted forms, the peasants in coca-growing regions bore the cost. The 2016 Peace Accord between the Santos government and FARC earned the Nobel Peace Prize. In 2022, Gustavo Petro was elected — the first left-wing president in Colombian history, a former M-19 guerrilla. His vice president Francia Márquez, an Afro-Colombian environmental human rights defender from Cauca who had spent years fighting illegal gold mining threatening her community, became the first Afro-Colombian woman to hold the office. Colombia also gave the world Gabriel García Márquez and magical realism, cumbia, vallenato, and Shakira — a culture that metabolized a century of violence into art."},
+  {n:"Ecuador",       f:"🇪🇨",r:"South America",  t:["far_right"],                   rank:23, uNote:null,note:"Explicitly described as a 'far-right government' by human rights organisations. President Noboa (re-elected May 2025) cracked down on Indigenous-led anti-austerity protests in October 2025 — 2 killed, 473 injured, 12 missing, 206 detained — and labelled protesters 'terrorists', directly echoing Trump's playbook. Military enforced disappearances: 26 people seized and disappeared by armed forces in 2024-2025. Eliminated the Ministry of Environment AND the Ministry of Women and Human Rights; merged Environment into Energy and Mines to fast-track oil and mining extraction. Signed a deal with Erik Prince (Blackwater/Academi) — unconstitutional. Trade deal with the US allows American companies to withdraw profits tax-free. Ecuador went from 'free' to 'partly free' (Freedom House 2026). Trying to replace the progressive Pachamama constitution (the first in the world to give nature legal rights) with a new one written by his government. Froze bank accounts of environmental defenders including the Pachamama Foundation. Constitutional Court judges publicly labelled 'enemies of the people'."},
+  {n:"Paraguay",      f:"🇵🇾",r:"South America",  t:["far_right"],                   rank:40, uNote:null,note:"Governed by the Colorado Party — the same party that ran Stroessner's 35-year dictatorship (1954–89). President Peña called that dictatorship 'more than 50 years of stability' and the coup 'a political agreement.' Paraguay hosted CPAC 2025 with Trump's inner circle and Milei. Peña is the most openly Trump-aligned president in South America, supports the Monroe Doctrine revival, and has US soldiers on Paraguayan soil. Real power sits with Horacio Cartes — the richest man in Paraguay, US-sanctioned for corruption and cigarette smuggling, who handpicked Peña. NGO restriction law passed in 2025 without civil society input. Gen Z protests in September 2025 were met with 3,000 police vs 600 protesters, 31 arrests, denial of medical care to detainees."},
+  {n:"USA",           f:"🇺🇸",r:"North America",  t:["special","hegemon","bombing"],  rank:16, uNote:null,note:"The full list of US interventions, coups, bombings, proxy wars, sanctions regimes, and installed dictators would be longer than this entire app. Instead: read every other entry. The US is in almost all of them. Iran 1953 — CIA coup. Guatemala 1954 — CIA coup. Congo 1961 — CIA involvement in Lumumba's assassination. Brazil 1964 — US backed the military coup. Chile 1973 — US backed Pinochet. Argentina, Uruguay, Paraguay, Bolivia — Operation Condor, coordinated with and funded by Washington. Indonesia 1965 — US provided kill lists. Iraq 1980s — US armed Saddam during the Iran-Iraq War, including when he used chemical weapons. Iraq 2003 — invasion on fabricated pretexts, one million dead. Afghanistan 2001–2021 — twenty years, abandoned. Libya 2011 — NATO intervention, state collapse. Yemen — US weapons, US refueling, US intelligence for Saudi strikes. Gaza — US bombs, US diplomatic cover, US vetoes at the UN. This is the host nation of the 2026 World Cup. FIFA gave the tournament to the country whose military budget exceeds the next ten countries combined, which has military bases in 80 countries, which has sanctioned a third of the world's population."},
+  {n:"Canada",        f:"🇨🇦",r:"North America",  t:["hegemon_lite"],                rank:30, uNote:null,note:"British colonization, historical atrocities against indigenous peoples. Host nation. PM Carney came to power on anti-Trump nationalism then pivoted: struck a pipeline deal with Alberta, passed the Building Canada Act in 20 days overriding indigenous UNDRIP rights to fast-track resource extraction. Indigenous organizations were given one week of consultation. Hosting the World Cup alongside the US while defining itself as anti-Trump."},
+  {n:"Mexico",        f:"🇲🇽",r:"North America",  t:[],                              rank:15, uNote:null,note:"Host nation — and one of the most layered countries in this tournament. The Aztec capital Tenochtitlan, built on a lake where Mexico City now stands, was one of the largest cities in the world when Hernán Cortés arrived in 1519. He destroyed it in two years. Three hundred years of colonial rule followed. The Mexican-American War (1846–1848): the US invaded after manufacturing a pretext, and Mexico lost roughly half its territory — modern-day California, Texas, New Mexico, Arizona, Nevada, Utah, Colorado — in the Treaty of Guadalupe Hidalgo. The US literally took half the country. The Mexican Revolution (1910–1920): Emiliano Zapata and Pancho Villa led one of the first great revolutions of the 20th century against the oligarchy of Porfirio Díaz. The PRI (Partido Revolucionario Institucional) then ruled Mexico for 71 years (1929–2000) — institutionalized corruption as a governing system, elections as theater. The Tlatelolco massacre (October 2, 1968): government forces killed student protesters ten days before the Mexico City Olympics opened. The exact death toll — somewhere between 30 and 300+ — was covered up for decades. NAFTA (1994): the free trade agreement devastated Mexican corn farmers who could not compete with subsidized US agriculture; millions left their land. The Zapatista uprising (January 1, 1994) began on the exact day NAFTA took effect — Mayan indigenous communities in Chiapas rising in direct response. The 43 Ayotzinapa students (September 2014): 43 student teachers were disappeared by police with alleged cartel coordination in Iguala; their fate remains largely unresolved. Since Felipe Calderón launched the military against drug cartels in 2006, over 300,000 people have been killed. In June 2024, Claudia Sheinbaum was elected — the first woman president in Mexican history, a climate scientist and former mayor of Mexico City. The country that hosted the 1970 World Cup (Pelé's Brazil) and the 1986 World Cup (Maradona's Hand of God, the greatest individual tournament performance in football history) is hosting again."},
+  {n:"Panama",        f:"🇵🇦",r:"Central America",t:[],                              rank:33, uNote:"Only their second-ever World Cup appearance.",note:"Panama was part of Colombia until 1903 — and it was taken, not given. The US wanted to build a canal. Colombia's senate rejected the Hay-Herrán Treaty (the proposed deal). Washington's response: fund, arm, and encourage a Panamanian separatist movement. The 'revolution' lasted three days. The US immediately recognized the new republic and stationed warships to prevent Colombian forces from responding. Then — before Panama even had a functioning government — the Hay-Bunau-Varilla Treaty was signed, handing control of a ten-mile-wide strip through the center of the country to the United States 'in perpetuity.' The treaty was signed on Panama's behalf by Philippe Bunau-Varilla, a French engineer with financial stakes in the canal project — not a Panamanian. The Canal was built largely by Caribbean migrant workers, especially Barbadians, under brutal conditions. Estimates of workers who died during construction: 5,000 to 27,000. The Canal Zone then became a de facto US colony inside Panama — US military, US courts, US schools, segregated by race, flying the US flag. The 1964 Flag Riots: Panamanian students tried to fly their flag in the Zone; US students tore it down; protests became an uprising. 21 Panamanians were killed. It became a turning point. The Torrijos-Carter Treaties (1977) set a timeline for Panamanian sovereignty. Manuel Noriega: a CIA asset turned inconvenient, so the US invaded in 1989 (Operation Just Cause) — official US death toll 202 Panamanians, human rights organizations estimated 500–3,000. The Canal was finally returned December 31, 1999. Today Panama is a major financial center — the Panama Papers (2016) exposed it as one of the world's primary offshore tax havens and money-laundering hubs. The Darién Gap, the lawless jungle on Panama's border with Colombia, has become one of the most dangerous migration routes on earth — hundreds of thousands of people, many from West Africa, cross it annually trying to reach North America. Panama has functioned as a turnstile country — a geographic and economic corridor that global powers move things through: ships, money, migrants, drugs, troops — while Panamanians bear the costs of living inside it. And in 2025, the US made clear it still sees the Canal as its own. Trump declared in his inauguration speech that the US should 'take back' the Panama Canal, citing Chinese influence (a Hong Kong-based company operates two ports at its ends) and claiming the US was being charged unfair tolls. He refused to rule out military force. Panama's president pushed back directly. The Canal has been Panamanian since 1999 — but Washington's attitude apparently did not get the memo."},
+  {n:"Haiti",         f:"🇭🇹",r:"Caribbean",      t:[],                              rank:83, uNote:"Most impoverished nation in the Western Hemisphere — directly caused by the punishment for winning their independence. First Black republic in history. US occupation 1915–1934. Currently facing gang violence and political collapse worsened by decades of Western interference.",note:"The only successful slave revolution in history (1804) — defeating France, Spain, and Britain simultaneously. France then forced Haiti to pay ~150 years of reparations for the 'insult' of winning their freedom (~$115 billion in today's money). Haiti then aided Simón Bolívar's liberation of South America. US military occupation 1915–1934. The West has never forgiven Haiti for winning. In 1802, Napoleon sent Polish Legion soldiers to crush the revolution — many refused to fight, defected to the Haitian side, and fought for independence. Dessalines granted them citizenship, calling them 'the Blacks of Europe' in the constitution. Their descendants (the Pologne) still live in Cazale, Haiti today. Haiti's 2026 World Cup jersey featured an illustration of the Battle of Vertieres with independence heroes raising the Haitian flag — which many read as including the Polish flag as a tribute to that solidarity. FIFA forced Haiti to change the jersey days before their Scotland match, citing 'political imagery' rules. The original jerseys sold out immediately. This was Haiti's second forced clothing change in 2026: the IOC had already made them remove an image of Toussaint Louverture from their Winter Olympics outfit. FIFA didn't explain which element was problematic. Supporters accused France of lobbying for the ban. Then there is MINUSTAH: the UN mission (2004–2017) led by Brazil, sent after the US and France removed Aristide. It brought cholera (10,000+ dead), documented sexual abuse by peacekeepers, and military operations in Port-au-Prince slums that killed civilians. What it did not bring: stability. The gang crisis that now controls much of Haiti grew in the vacuum that followed. Haiti has been punished, occupied, and 'stabilized' by the international community for over two centuries. The punishment continues."},
+  {n:"Curaçao",       f:"🇨🇼",r:"Caribbean",      t:[],                              rank:82,uNote:"First ever World Cup appearance. Population of ~150,000. Still a constituent country of the Kingdom of the Netherlands — players hold Dutch passports. Choosing Curaçao over the Netherlands is a political act.",note:"First ever World Cup appearance. Still part of the Kingdom of the Netherlands today."},
+  {n:"Germany",       f:"🇩🇪",r:"Europe",         t:["special","hegemon","colonizer"],rank:10, uNote:null,note:"Colonial Africa (Namibia, Tanzania, Cameroon — where Germany committed what historians consider the first genocide of the 20th century against the Herero and Nama peoples). 1914. 1939. And then: July 8, 2014, Belo Horizonte, Estádio Mineirão. Brazil 1–7 Germany. On home soil. In a World Cup semifinal. The 7x1 — the single most traumatic result in Brazilian football history, watched by 200 million Brazilians in silence and tears. For any Brazilian holding this compass, the political and the personal arrive at exactly the same conclusion: always against."},
+  {n:"France",        f:"🇫🇷",r:"Europe",         t:["hegemon","colonizer"],         rank:1,  uNote:null,note:"The Algerian War (1954–1962): France refused to call it a war until 1999. An estimated 1.5 million Algerians died; systematic torture by French forces was documented and denied for decades. The October 17, 1961 Paris Massacre: police under Maurice Papon (who had also deported Jews during WWII) killed between 120 and 200 Algerian protesters — bodies thrown into the Seine. Suppressed in France for forty years. Haiti: after the only successful slave revolution in history (1791–1804), France forced Haiti to pay 150 million gold francs in 'reparations' to compensate former slaveholders for their 'lost property.' Haiti paid this for 150 years, into the 1950s — a debt that kept one of the most extraordinary nations in history locked in poverty. Françafrique: France maintained control over its former African colonies through a shadow network of military bases, hand-picked client rulers, assassination of inconvenient leaders, and economic dependency enforced by the CFA Franc — a currency still partially controlled by Paris that keeps 14 African countries from full monetary sovereignty. Operation Barkhane and successive French military operations in the Sahel ended in humiliation: Mali, Burkina Faso, and Niger expelled French forces between 2022 and 2023, the most significant rupture in Françafrique in sixty years. The squad: Mbappé (father Cameroonian, mother Algerian-Kabyle), Camavinga (born in a Angolan refugee camp in the DRC), Tchouaméni (Cameroonian roots), Cherki (Algerian). The country that wrote the Declaration of the Rights of Man built an empire on its opposite. When France lifts a trophy, the question writes itself: does it belong to the République, or to the children of the people the République colonized? On Mbappé specifically — he is a generational phenomenon and also a man of unusual moral clarity for an athlete at his level. From Bondy, a banlieue northeast of Paris, representing every kid from the suburbs that France's republic told it didn't belong. Donated his entire 2018 World Cup prize money (~500,000€) to Premiers de Cordée, a charity supporting disabled children in sport. At the 2022 World Cup, publicly refused to participate in FFF promotional content with Betclic (official gambling sponsor), stating: 'I know people who have suffered from gambling addiction. I don't want to promote that.' He scored a hat-trick in the 2022 final — the first since Geoff Hurst in 1966 — and France still lost. He was the best player on the losing side. At 19 he was the second teenager after Pelé to score in a World Cup final. He is, without argument, the best footballer on earth. He just happens to play for France."},
+  {n:"England",       f:"🏴󠁧󠁢󠁥󠁮󠁧󠁿",r:"Europe",         t:["hegemon","colonizer"],         rank:4,  uNote:null,note:"At its peak the British Empire covered 25% of the world's land surface and 23% of its population — the largest empire in human history. Britain was the dominant slave-trading power for much of the 18th century, transporting an estimated 3.1 million enslaved Africans. The triangular trade made Britain's industrial revolution possible. Ireland: 800 years of colonial domination, the Great Famine (1845–52) in which British policy deliberately withheld food from a starving population — 1 million dead, 2 million emigrated, a quarter of the island gone. India: the Bengal Famine of 1943 killed 2–3 million people while Churchill diverted food to Britain and made documented contemptuous remarks about Indians. The Partition of 1947 — drawn in weeks by a British lawyer who had never been to India — caused between 200,000 and 2 million deaths and 15 million displaced. Kenya (1950s): the British ran concentration camps, tortured, and castrated Mau Mau suspects. The Opium Wars (1839–42, 1856–60): Britain used military force to compel China to accept opium imports, creating the framework for colonial addiction economics. The Windrush scandal: people from the Caribbean who came to Britain at the British government's explicit invitation were later wrongly classified as illegal immigrants, detained, and deported — some after 50 years of British life. The current England squad is built almost entirely on the children of the people the Empire colonized: Black British players whose families came from the Caribbean, West Africa, and beyond. The Empire never really ended — it just changed dress codes."},
+  {n:"Spain",         f:"🇪🇸",r:"Europe",         t:["hegemon","colonizer"],         rank:2,  uNote:null,note:"One of the largest empires in history, with one of the highest body counts. The Spanish conquest of the Americas (1492 onward) was a civilizational catastrophe: Hernán Cortés destroyed the Aztec Empire in two years; Francisco Pizarro dismantled the Inca within a decade; the Taíno people of the Caribbean were virtually exterminated within 50 years of contact. Disease, the encomienda forced-labor system, and direct slaughter reduced the indigenous population of the Americas by an estimated 90% — the largest demographic collapse in human history. The silver mines of Potosí (now Bolivia) ran on conscripted indigenous labor under the mita system; tens of thousands died underground. That silver financed European capitalism for two centuries. The Philippines: 333 years of colonial rule (1565–1898). 1492 also saw the Alhambra Decree — expulsion of all Jews from Spain; the Moors followed in 1609. Domestically: Francisco Franco's fascist dictatorship ran 1939–1975, outlasting Hitler and Mussolini by decades. Today Spain has a left coalition government (Sánchez/PSOE + Sumar), but Vox — a far-right party with direct ideological roots in Francoism — remains a significant parliamentary force. The colonial debt has never been acknowledged, let alone paid."},
+  {n:"Portugal",      f:"🇵🇹",r:"Europe",         t:["hegemon","colonizer"],         rank:5,  uNote:null,note:"Portugal launched the European Age of Discovery and built one of the most far-reaching colonial empires in history — from the 1400s until 1975, the last European power to decolonize. Portugal was the first European country to engage in the transatlantic African slave trade (beginning 1441) and transported more enslaved Africans than any other nation: an estimated 5.8 million people. The empire spanned Brazil (1500–1822), Angola, Mozambique, Guinea-Bissau, Cabo Verde, São Tomé and Príncipe, Goa, Macau, and Timor-Leste. While other European powers were decolonizing in the 1950s and 60s, Portugal refused — because the Estado Novo, António Salazar's fascist regime (1933–1974), needed the colonies for economic survival and ideological legitimacy. Portugal fought simultaneous colonial wars in Angola (1961–1974), Mozambique (1964–1974), and Guinea-Bissau (1963–1974) — unwinnable wars that radicalized a generation of military officers. The Carnation Revolution (April 25, 1974): leftist military officers staged a near-bloodless coup, ending 48 years of fascism. Civilians placed carnations in the soldiers' rifle barrels. One of the most beautiful moments in modern European history. Independence for the colonies followed rapidly — but the transitions were chaotic, contributing to civil wars in Angola and Mozambique that lasted decades. The colonial ideology of 'Lusotropicalism' — the theory that Portuguese colonialism was inherently gentler and less racist — was promoted by the Estado Novo as propaganda to justify empire. It was largely a myth designed to launder atrocity. Portugal has never paid reparations. Currently governed by a center-right Democratic Alliance (AD) under Luís Montenegro, relying on the parliamentary support of Chega — a far-right party — after inconclusive 2024 elections."},
+  {n:"Netherlands",   f:"🇳🇱",r:"Europe",         t:["hegemon","colonizer"],         rank:7,  uNote:null,note:"350 years in Indonesia — the Dutch East India Company (VOC) was the world's first corporate colonial megapower and ran a slave empire of extraordinary brutality. The Banda Islands massacre (1621): VOC troops killed ~90% of the population. The Coolie Ordinances (1880) made plantation owners judge, jury and executioner over their workers. During the 'police actions' to retake Indonesia after WWII, Dutch soldiers executed 431 men in Rawagede because villagers refused to give up an independence fighter's location. Estimated 150,000+ Indonesians killed in the independence war (1945-1949). Suriname, Dutch Antilles, Curaçao — still sovereign over Curaçao today. Historical note: the Netherlands also shaped South African apartheid through Dutch Reformed Church influence and Afrikaner settler descendants. The Netherlands has made partial apologies in recent years. Current government: centrist Jetten coalition after Wilders fell."},
+  {n:"Belgium",       f:"🇧🇪",r:"Europe",         t:["hegemon","colonizer"],         rank:9,  uNote:null,note:"King Leopold II ran the Congo Free State (1885–1908) as his personal property — not a colony but a private estate operated for profit. His agents enforced rubber quotas by severing hands: hands were cut off and brought back as proof that bullets had not been wasted; villages that missed quotas were burned. An estimated 10 million Congolese died in two decades — roughly half the population. When international outrage forced Leopold to cede the territory to the Belgian state, it became the Belgian Congo (1908–1960) — the violence became bureaucratic, the extraction continued. At independence, Patrice Lumumba — the first democratically elected prime minister in Congolese history — was kidnapped, tortured, and executed within ten weeks of taking office, with direct Belgian and CIA involvement. His body was dissolved in acid to prevent a grave from becoming a shrine. Belgium formally apologized for its role in 2002 — 41 years later. Belgium also colonized Rwanda and Burundi, where colonial administrators hardened Hutu/Tutsi distinctions with racial identity cards, building the bureaucratic infrastructure that would facilitate the 1994 genocide (800,000 killed in 100 days). Belgian UN peacekeepers were present in Rwanda as the killing began — and were withdrawn. The current Belgian squad is almost entirely diaspora: Lukaku (Congolese descent), Trossard, Carrasco — children of the countries Belgium extracted. Belgium spent 541 consecutive days without a government in 2010–2011, a world record."},
+  {n:"Norway",        f:"🇳🇴",r:"Europe",         t:[],                              rank:31, uNote:null,note:"Oil was discovered in the North Sea in 1969; Norway became one of the world's wealthiest countries in a generation. The Government Pension Fund Global — the oil fund — is now the largest sovereign wealth fund on earth, worth over $1.7 trillion, owning roughly 1.5% of all publicly traded companies globally. Norway's model: extract oil, invest the returns abroad, and fund the world's most comprehensive welfare state. The contradiction: Norway presents itself as a global climate leader while remaining Europe's second-largest gas exporter and one of its largest oil producers. Equinor (formerly Statoil, 70% state-owned) operates globally. Norway's fossil fuel exports have materially contributed to the crisis its diplomats campaign against. WWII: Norway was occupied by Nazi Germany from April 1940. The collaborationist Quisling government — led by Vidkun Quisling — is the reason 'quisling' became an English word for traitor. The Breivik massacre (July 22, 2011): a far-right terrorist bombed government buildings in Oslo then massacred 69 people — mostly teenagers at a Labour Party youth camp on the island of Utøya. 77 dead. Norway's response became internationally noted: no death penalty, Breivik sentenced to preventive detention, the democratic fabric deliberately preserved. Norway as mediator: the Oslo Accords (1993) were secretly negotiated in Norway and briefly felt like a historic breakthrough in the Israeli-Palestinian conflict. They ultimately failed — but Norway's role as neutral mediator has continued in Colombia, Sudan, and elsewhere. NATO founding member since 1949 — part of the military alliance that bombed Yugoslavia, invaded Afghanistan, destroyed Libya, and has functioned as the primary enforcement arm of Western military hegemony since the Cold War. Norway's participation is a real mark against its progressive credentials, even if it's rarely called out. That said: Norway is genuinely cooler than most European countries. Strong social democratic tradition, consistently among the world's most equal societies, and one of the few nations that actually stood up to US military pressure (the nuclear-free demand in the 1980s, before the Nuclear Free Zone Act became associated with NZ). The contradictions are real — oil wealth, NATO, climate hypocrisy — but so is the welfare state and the peace diplomacy."},
+  {n:"Sweden",        f:"🇸🇪",r:"Europe",         t:["far_right"],                   rank:38, uNote:null,note:"Government backed by the Sweden Democrats (SD) — a far-right party founded in 1988 by people with direct ties to the neo-Nazi movement. Its founding circles overlapped with the Keep Sweden Swedish movement (BSS), a successor to Swedish neo-Nazi organizations. SD entered parliament in 2010 and became the second-largest party in 2022. Since October 2022, PM Ulf Kristersson governs on the back of SD votes — giving Sweden the strictest immigration policy in Scandinavia, with record deportations and welfare cuts for migrants. WWII 'neutrality': Sweden sold iron ore to Nazi Germany throughout the war and allowed German Wehrmacht troops to transit its territory to occupy Norway — a form of neutrality that kept the Nazi war machine running. Brief colonial history: Saint Barthélemy in the Caribbean (1784–1878), gold trade posts in West Africa (17th century). The SD has become a model for the European far-right playbook: launder the worst elements, present as mainstream, govern by proxy."},
+  {n:"Switzerland",   f:"🇨🇭",r:"Europe",         t:["hegemon_lite"],                rank:19, uNote:null,note:"Banking secrecy laws have made Switzerland the world's primary shelter for illicit money for over a century. Swiss banks held Marcos money, Duvalier money, Abacha money, Mobutu money, apartheid-era South African funds, and billions in Russian oligarch assets. The Swiss banking system enabled the kleptocratic capture of entire developing nations — money stolen from populations that never got it back. Switzerland was neutral in both World Wars, which also meant banking for the Nazis. The oldest and most consistently useful financial infrastructure of global inequality."},
+  {n:"Croatia",       f:"🇭🇷",r:"Europe",         t:["far_right"],                    rank:11, uNote:null,note:"During WWII, the Ustasha regime (NDH — Independent State of Croatia, 1941–45) was a Nazi puppet state that carried out genocide against Serbs, Jews, and Roma. Jasenovac concentration camp: estimates of those killed range from 77,000 (Croatian government) to over 700,000 (Serbian sources); the actual figure is likely in the hundreds of thousands. The Ustasha killed with a brutality that disturbed even some German SS officers. This history sits unresolved — the 'Za dom spremni' (For the Homeland, Ready) salute, an Ustasha phrase, has appeared at Croatian football matches and in official military ceremonies, triggering recurring controversies. Croatia declared independence from Yugoslavia in 1991. The Croatian War of Independence (1991–1995) was brutal; Operation Storm (1995) — Croatia's successful recapture of Serb-held territory — displaced 150,000–200,000 Croatian Serbs in days, the largest single ethnic displacement in Europe since WWII. The operation is celebrated in Croatia and prosecuted (partially) at The Hague. EU member since 2013, NATO member since 2009. Current government: the HDZ (center-right, founded by nationalist Franjo Tuđman) formed a coalition with the Homeland Movement (DP) — a hard-right nationalist party — after the 2024 elections, when it lost its majority. The DP secured control over agriculture, the economy, and a new ministry of demography and immigration. The government excluded the Independent Democratic Serb Party for the first time in years — a deliberate signal to the Serbian minority. Luka Modrić: arguably the greatest midfielder of his generation, 2018 Ballon d'Or, the reason Croatia reached the 2018 World Cup final."},
+  {n:"Scotland",      f:"🏴󠁧󠁢󠁳󠁣󠁴󠁿",r:"Europe",          t:[],                              rank:43, uNote:"First World Cup since 1998 — a 28-year wait. Came as arguably the most politically outspoken team in the tournament.",note:"Scottish Parliament formally stated genocide appears to be unfolding in Gaza. Voted for immediate ceasefire in 2023. In early 2026 passed a motion backing boycott of Israel and companies enabling the war. Paused public grants to arms companies supplying the Israeli military. Raises the Palestinian flag outside government buildings — all while Westminster takes the opposite position. Scotland's stance is a direct internal challenge to British foreign policy. Centuries of resistance against English domination: the Wars of Scottish Independence are cultural bedrock."},
+  {n:"Austria",       f:"🇦🇹",r:"Europe",         t:["far_right"],                   rank:24, uNote:null,note:"Austria produced Adolf Hitler — born in Braunau am Inn — and greeted the Anschluss of March 1938 with massive, enthusiastic crowds in Vienna. Austria also produced Adolf Eichmann, the logistical architect of the Holocaust. After WWII, Austria successfully cultivated the myth of being 'Hitler's first victim' — a convenient fiction that allowed it to escape the de-Nazification process Germany was forced through. The Kurt Waldheim affair (1986): Austria elected as president a man who had hidden his service in a German Wehrmacht unit implicated in war crimes in the Balkans — and who had spent ten years as UN Secretary General while concealing this. The FPÖ was founded in 1956 by former Nazis as a political home for ex-NSDAP members. Jörg Haider led it to mainstream prominence in the 1990s with references to the 'orderly employment policies' of the Third Reich. Herbert Kickl, current FPÖ leader, formed government in 2025 after winning the most votes in the 2024 election. He refers to himself as 'Volkskanzler' — the People's Chancellor, Hitler's exact title. He has called for asylum seekers to be held in 'quarantine camps.' The FPÖ has maintained historically close ties with Russia. Vienna is simultaneously the city of Freud, Klimt, Mahler, Schoenberg, and Wittgenstein — one of the great intellectual capitals of modernity, which makes the current politics all the more dissonant."},
+  {n:"Czechia",       f:"🇨🇿",r:"Europe",         t:["far_right"],                   rank:41, uNote:null,note:"Babiš coalition (ANO + SPD + Motorists) took office December 2025. Three parties, three flavors of bad. ANO: populist billionaire Babiš, who cut all Czech aid to Ukraine and faces EU subsidy fraud charges. SPD: explicitly xenophobic, wants to expel 380,000 Ukrainian war refugees, aligns with AfD and Le Pen. Motorists (AUTO): started as 'close the bike lanes' populism, is funded by a coal baron whose mines the environment ministry regulates — their star politician Turek posed in Nazi Golden Dawn gear, wrote posts wishing opponents to gas chambers, was personally invited to Trump's inauguration and met Musk at CPAC, and the president refused to appoint him minister. Leader declared 'the climate crisis is over' upon becoming environment minister. Platform: 'cars, coal and the Czech crown.' 35 years after the Velvet Revolution."},
+  {n:"Bosnia and Herzegovina",f:"🇧🇦",r:"Europe", t:[],                              rank:65, uNote:"First World Cup since 2014. But more than that: a country that survived genocide (100,000 dead, 1992–95, Srebrenica) and is still fighting to exist as a unified state. The national football team is one of the few things that represents a whole Bosnia — playing is a political act.",note:"Republika Srpska has been actively trying to secede for years, backed by Serbia, Russia and Hungary. Dodik convicted in February 2025, sentenced to prison and banned from politics — but his successor immediately pledged to continue 'with ever greater force.' The 30th anniversary of the Srebrenica genocide was marked in July 2025 while the country was still in constitutional crisis."},
+  {n:"Morocco",       f:"🇲🇦",r:"Africa",         t:[],                              rank:8,  uNote:"Africa's #1 ranked team and one of the top 10 in the world. 2022 WC semifinalists — the first African and Arab team to ever reach the semis. A genuine powerhouse.",note:"One of the most politically layered teams in this tournament. The 2022 WC was a pan-African and pan-Arab moment — Moroccan players carried Palestinian flags, and fans from across the Arab world adopted the team as their own. But Morocco's government normalized relations with Israel in 2020 (Abraham Accords) in exchange for US recognition of its claim over Western Sahara — a disputed territory Morocco has occupied since Spain withdrew in 1975. There is a documented parallel: Israel supplies Morocco with surveillance technology used in Western Sahara, while Morocco provides diplomatic cover for Israel's occupation of Palestine. Moroccan public opinion remains overwhelmingly pro-Palestinian (demonstrations April 2025 and 2026). The government channels humanitarian aid to Gaza while deepening security ties with Israel. The tension between the team's symbolism and the government's politics is one of the sharpest contradictions in this World Cup. One shadow over the squad: captain Achraf Hakimi (Real Madrid defender, best right-back in the world) was ordered by a French appeals court in June 2026 to stand trial for a 2023 rape charge — a case he and his legal team have consistently denied, calling it a set-up. He has welcomed the trial as an opportunity to publicly clear his name. No verdict has been reached; he is innocent until proven otherwise. He is playing at this World Cup while the trial date is pending."},
+  {n:"Senegal",       f:"🇸🇳",r:"Africa",         t:[],                              rank:14, uNote:"Africa's #2 ranked team at FIFA #14. African champions. A powerhouse from the Global South.",note:"Dakar was the administrative capital of French West Africa — the nerve center of an empire stretching across eight countries. The 1947–1948 Dakar-Niger railway strike (immortalized in Sembène Ousmane's novel God's Bits of Wood) was one of the defining labor struggles of African colonialism — workers striking for equal pay and benefits with their French counterparts, holding out for months. Léopold Sédar Senghor: poet, philosopher, co-founder of the Négritude movement (an affirmation of Black African cultural identity against French assimilationism), and Senegal's first president after independence in 1960 — one of the most intellectually formidable heads of state of the 20th century, who voluntarily left power in 1980. Cheikh Anta Diop: Senegalese historian and scientist who argued in the 1950s that Ancient Egypt was a Black African civilization — foundational, radical, still argued over. Sembène Ousmane: father of African cinema. Senegal has been one of Africa's most consistently stable democracies since independence — a rare distinction on a continent where France repeatedly backed coups. Then March 2024: Bassirou Diomaye Faye was elected president — a pan-Africanist, the youngest elected president in African history, who had been in prison until 10 days before the election on charges his supporters called political. He won in the first round. His mentor and Prime Minister Ousmane Sonko has made renegotiating French military agreements and reviewing the CFA Franc a central plank of government. Senegal is part of the wave of West African nations asserting sovereignty against Françafrique. Sadio Mané: built a hospital, a school, and infrastructure in his home village of Bambali; paid his parents' neighbors' electricity bills; a symbol of what African excellence looks like when it refuses to be extracted. AFCON 2021 (played 2022): champions. This team represents something."},
+  {n:"Côte d'Ivoire", f:"🇨🇮",r:"Africa",         t:[],                              rank:34, uNote:null,note:"French colony until 1960, but remained in France's orbit through Françafrique — President Houphouët-Boigny maintained close ties with Paris and the CFA Franc system. Today produces over 40% of the world's cocoa supply, but the industry has persistent child labor problems despite decades of industry promises to fix them. Devastating civil war 2002–2011 split the country in half. The Drogba generation — one of the greatest African teams ever assembled — carried something beyond football for a divided nation."},
+  {n:"Ghana",         f:"🇬🇭",r:"Africa",         t:[],                              rank:74, uNote:null,note:"The Gold Coast was one of the primary sites of the transatlantic slave trade — Cape Coast Castle and Elmina (built by the Portuguese in 1482, later Dutch, then British) were the largest slave-trading fortresses in West Africa, holding enslaved people in dungeons beneath the chapel before shipment to the Americas. The history is layered: the Ashanti Kingdom, one of the most powerful in West Africa, both resisted European colonization and participated in the slave trade by selling captives to European merchants — a complexity Ghanaians have reckoned with more honestly than most. The Anglo-Ashanti Wars (1823–1900): the Ashanti resisted British annexation through six wars over nearly a century. The Gold Coast became a formal British colony in 1867. Kwame Nkrumah led Ghana to independence on March 6, 1957 — the first sub-Saharan African country to gain independence from colonial rule, making Ghana the symbolic beacon of the entire African independence movement. Nkrumah was a pan-Africanist visionary: he envisioned a United States of Africa, hosted liberation movements from across the continent, and made Accra a center of global anti-colonial thought. In 1966, while Nkrumah was visiting Hanoi to discuss Vietnam peace negotiations, the CIA backed a military coup that overthrew him. The rest of the 20th century brought alternating military and civilian governments until a stable democratic transition in 1992. Ghana is now consistently ranked among Africa's most stable democracies. The 2010 World Cup: Ghana reached the quarterfinals, the last African team standing, before Luis Suárez's deliberate handball on the goal line and Asamoah Gyan's missed penalty ended the dream. The whole continent felt that loss. The 'Year of Return' (2019): Ghana invited the African diaspora — particularly descendants of enslaved people — to come home, 400 years after the first enslaved Africans arrived in America. Thousands came. The Darién Gap connects Ghana to Panama in a way no one planned: thousands of Ghanaians and West Africans cross that jungle every year, desperate to reach North America, passing through the country whose canal was built by their predecessors."},
+  {n:"South Africa",  f:"🇿🇦",r:"Africa",         t:["afrophobia"],                  rank:60, uNote:"Large parts of the African continent were rooting against them, not for them — due to the Afrophobia crisis. The continent that sheltered ANC fighters during apartheid now watches South Africa attack their citizens.",note:"Ongoing Afrophobia crisis: groups like Operation Dudula and March and March have conducted vigilante attacks on African migrants since 2024, blocking access to healthcare and schools. A Malawian toddler died in July 2025 after being denied treatment at an SA clinic. The Sports Minister ran on mass deportation promises. Nigeria was considering diplomatic retaliation just before this World Cup. The deep irony: African nations sheltered the ANC during apartheid — South Africa's freedom was built on pan-African solidarity, now betrayed."},
+  {n:"Egypt",         f:"🇪🇬",r:"Africa",         t:[],                              rank:29, uNote:null,note:"One of the oldest continuous civilizations on earth — the Egyptian state predates Rome by 3,000 years. The Nile valley surplus allowed the pyramids, Alexandria's library, and a mathematics and medicine tradition that seeded the ancient world. Al-Azhar University (founded 970 CE) is one of the oldest continuously operating universities on earth and remains the center of Sunni Islamic scholarship. British occupation: 1882–1952. The 1956 Suez Crisis was a watershed moment: Nasser nationalized the Suez Canal; Britain, France, and Israel invaded; the US forced their humiliating withdrawal. The first time a decolonizing country stared down three Western powers and won. Nasser's pan-Arab nationalism made Egypt the political center of the Arab world for a generation. Sadat's 1979 peace deal with Israel (Camp David Accords) fractured Arab solidarity, made Egypt a US client, and got Sadat assassinated by Islamists in 1981. Mubarak's 30-year police state followed. The Arab Spring: Tahrir Square 2011, 18 days, Mubarak fell. The first free elections brought Mohamed Morsi and the Muslim Brotherhood (2012). In July 2013, General Abdel Fattah el-Sisi staged a military coup — backed by Saudi Arabia, UAE, and tacitly accepted by the US. The Rabaa massacre (August 14, 2013): security forces killed between 800 and 2,600 protesters in a single afternoon — one of the largest single-day mass killings of demonstrators in modern history. Sisi has governed since. Tens of thousands of political prisoners; journalists, feminists, and LGBTQ+ people systematically imprisoned. During the Gaza genocide, Egypt controls the Rafah crossing — under immense Israeli and US pressure to keep it closed and Gazans trapped."},
+  {n:"Algeria",       f:"🇩🇿",r:"Africa",         t:[],                              rank:28, uNote:null,note:"France colonized Algeria in 1830 — 132 years. The initial conquest included systematic atrocities: French forces asphyxiated entire communities by lighting fires at cave entrances where Algerians had taken shelter. Alexis de Tocqueville, the great liberal philosopher of democracy, visited and wrote that such methods were regrettable but necessary. By the 20th century, over one million French settlers (pieds-noirs) lived on land seized from Algerians, under a legal system that made Algerians subjects without equal rights in their own country. The Sétif massacre (May 8, 1945): Algerian celebrations of the Allied victory over Nazism turned to protest; French forces and settlers killed between 6,000 and 45,000 Algerians in days of reprisals. The FLN launched the War of Independence on November 1, 1954. The Battle of Algiers (1956–57): systematic torture documented by French journalist Henri Alleg, later filmed by Gillo Pontecorvo. France used napalm, mass displacement, and internment camps. Estimates of Algerians killed: 400,000 (French official) to 1.5 million (Algerian government). Independence: July 5, 1962. The Black Decade (1991–2002): the military cancelled elections that Islamists were winning in 1991, triggering a civil war between the state and armed groups. Between 150,000 and 200,000 people killed — one of the 20th century's most under-covered conflicts. The Hirak movement (2019): mass weekly protests ended the 20-year presidency of the visibly incapacitated Bouteflika — he resigned April 2019. Hirak leaders remain imprisoned by the current Tebboune government. Algeria is the largest country in Africa, a significant gas supplier to Europe, close to Russia geopolitically, non-aligned by tradition. Its relationship with France remains one of the most unresolved colonial wounds in the world — France has never fully apologized for the war, and every French election resurfaces the wound."},
+  {n:"Tunisia",       f:"🇹🇳",r:"Africa",         t:[],                              rank:44, uNote:null,note:"French protectorate from 1881 to 1956 — 75 years of colonial rule imposed by the Treaty of Bardo. The independence movement was led by Habib Bourguiba and Neo-Destour; independence gained March 20, 1956. Bourguiba ruled 1956–1987 (modernizing but authoritarian). Then 23 years of Ben Ali's police state (1987–2011). The Jasmine Revolution of December 2010–January 2011 was the spark that lit the Arab Spring — the first popular uprising to topple a North African dictator. Tunisia became the Arab Spring's most promising democratic story: new constitution in 2014, the Tunisian National Dialogue Quartet won the Nobel Peace Prize in 2015. Then: President Kais Saied suspended parliament on July 25, 2021 in a self-coup, ruling by decree. A new constitution in 2022 gave him near-absolute powers. In February 2023, Saied deployed explicit 'Great Replacement' rhetoric against sub-Saharan African migrants, triggering mob violence, pogroms, and mass arbitrary deportations — a dark turn for a country that had built its democratic credibility on human rights. Despite the government, Tunisia has one of the strongest civil society traditions in the Arab world."},
+  {n:"Congo DR",      f:"🇨🇩",r:"Africa",         t:[],                              rank:46, uNote:"Rare qualification for one of the world's most resource-rich yet systematically impoverished nations — a direct legacy of Belgian colonialism.",note:"The Congo River basin is the second-largest rainforest on earth. The pre-colonial Kongo Kingdom (14th–17th century) was one of the great African states — sophisticated governance, long-distance trade networks, and diplomatic relations with European powers, all of which the slave trade systematically destroyed. Leopold II's Congo Free State and the Belgian Congo: see Belgium's entry — the hands, the rubber, the 10 million dead. Patrice Lumumba assassinated within 10 weeks of independence with Belgian and CIA involvement: see Belgium's entry. What followed: Mobutu Sese Seko, installed by the CIA, ruled for 32 years (1965–1997) — renamed the country Zaire, accumulated an estimated $5 billion personal fortune while the country's infrastructure collapsed, and was supported by Washington as long as he remained anti-communist. A textbook Cold War client: corrupt, brutal, and useful. The Second Congo War (1998–2003): eight African nations fought on Congolese soil in overlapping conflicts over minerals, power, and the aftermath of the Rwandan genocide. Estimated dead: 5.4 million — the deadliest conflict since World War II, almost entirely ignored by Western media. Eastern Congo has been in continuous armed conflict ever since, with dozens of militias competing over territory and minerals. Congo produces over 70% of the world's cobalt — essential for every electric vehicle battery and smartphone. Coltan, cassiterite, and gold are also extracted under systematic forced labor and violence. The supply chain of the global tech economy runs through eastern DRC. In January 2025, M23 rebels — backed by Rwanda — captured Goma, the largest city in eastern Congo, triggering a major humanitarian crisis. Sexual violence has been weaponized at a scale almost incomprehensible in scope. One of the world's most resource-rich countries; one of its most systematically impoverished populations. The distance between those two facts is the exact measure of what colonialism and its aftermath did."},
+  {n:"Cabo Verde",    f:"🇨🇻",r:"Africa",         t:[],                              rank:69, uNote:"Small island nation (pop. ~550,000), former Portuguese colony. One of the smallest countries ever to reach a World Cup.",note:"The Cape Verde archipelago was uninhabited when Portuguese navigators arrived in the 1450s. The population was built through the transatlantic slave trade: Portuguese settlers and enslaved West Africans brought to the islands made Cabo Verde a primary transshipment hub for enslaved people heading to Brazil and the Americas across three centuries. The islands' entire identity — its people, its Creole language, its music — emerged from this violent colonial fusion. Amilcar Cabral, one of Africa's greatest revolutionary thinkers, led the liberation movement for both Cabo Verde and Guinea-Bissau through the PAIGC. He was assassinated by Portuguese agents in Conakry in January 1973, just two years before independence was won. Independence: July 5, 1975, following the Carnation Revolution in Portugal. One of Africa's most stable democracies. More Cabo Verdeans live in the diaspora — Portugal, the Netherlands, the US — than on the islands, a direct legacy of a colonial economy that never allowed self-sufficiency. Cesária Évora, the 'Barefoot Diva,' brought morna — the music of longing, the sea, and saudade — to global stages. A country of 550,000 carrying something much larger than football."},
+  {n:"Korea Republic",f:"🇰🇷",r:"Asia/Oceania",  t:[],                              rank:25, uNote:"A democracy that just fought back a coup attempt and arrived at the World Cup anyway.",note:"Japanese colonization 1910–1945 (35 years): forced Japanese names, banned Korean language, hundreds of thousands of forced laborers, comfort women — see Japan's entry for the full weight. Division at the 38th parallel after WWII: the US took the south, the Soviet Union the north. The Korean War (1950–1953): an estimated 3 million dead, including vast numbers of civilians. It ended in an armistice, not a peace treaty — technically still unresolved. Park Chung-hee: military dictator 1961–1979, assassinated by his own intelligence chief. Chun Doo-hwan staged a coup in 1979 and ordered the Gwangju massacre in 1980 — hundreds killed as the military suppressed pro-democracy protesters. The 1987 democracy movement: mass street protests finally forced free elections. South Korea went from one of Asia's poorest countries to a major industrial economy (Samsung, Hyundai, LG) in roughly one generation — the 'Miracle on the Han River,' built on extraordinary discipline, state direction, and enormous human cost to workers. Then the Korean Wave: K-pop, K-drama, Bong Joon-ho's Parasite winning Best Picture (2020), BTS selling out stadiums worldwide. South Korea became a global cultural exporter while still technically at war with its northern half. December 3, 2024: President Yoon Suk-yeol declared martial law, claiming anti-state forces had infiltrated the National Assembly. The Assembly voted to lift it within hours. Yoon was impeached, arrested — the first sitting president in South Korean history to be detained — tried for insurrection, and sentenced to life imprisonment in February 2026. Progressive candidate Lee Jae-myung won the subsequent election in June 2025. The players at this World Cup represent a country that defended its democracy in real time, in the streets and in the assembly, and then sent a team to the tournament. EJAE performed at the opening ceremony alongside Bocelli."},
+  {n:"Japan",         f:"🇯🇵",r:"Asia/Oceania",  t:["hegemon","colonizer"],         rank:18, uNote:null,note:"Asian imperialism with a specific brutality that is still inadequately reckoned with. 35 years colonizing Korea: forced Japanese names, banned Korean language, hundreds of thousands of forced laborers, comfort women (systematic sexual slavery affecting 200,000+ women). The Nanjing Massacre (1937): 40,000 to 300,000+ killed in six weeks — historians debate scale but not the atrocity. Unit 731: systematic biological and chemical warfare experiments on live Chinese and Korean prisoners. Brutal occupations across Southeast Asia and the Pacific (1941-1945). Historical irony in this match: Japan occupied the Dutch East Indies (Indonesia) 1942-1945, briefly displacing Dutch colonial rule. Two colonial powers competing for the same territory, now playing football. The critical distinction from Germany: Japan has never fully atoned. Japanese politicians regularly visit Yasukuni Shrine, which enshrines convicted class-A war criminals. No full reparations for comfort women or forced laborers."},
+  {n:"IR Iran",       f:"🇮🇷",r:"Asia/Oceania",  t:[],                              rank:21, uNote:null,note:"The single most consequential act of Western interference in modern Iranian history: the 1953 CIA/MI6 coup that overthrew Mohammad Mosaddegh — the democratically elected prime minister who had nationalized Iranian oil — and reinstalled the Shah. Iranian democracy was strangled at birth by Washington and London to protect Anglo-American oil interests. The Shah's SAVAK secret police then tortured and disappeared dissidents for 25 years, directly producing the conditions for the 1979 Islamic Revolution. The revolution that replaced him was shaped by the trauma of that coup. The Iran-Iraq War (1980–1988): Saddam Hussein invaded with tacit Western support; the US supplied him with intelligence and looked away as he used chemical weapons on Iranian troops and Kurdish civilians. Over 500,000 Iranians died. US sanctions since 1979 — accelerated after 2018 — have devastated ordinary Iranians: access to medicine, food, and banking infrastructure severely restricted. The Iranian government is authoritarian and repressive: the Mahsa Amini protests of 2022–2023 (Woman, Life, Freedom) were met with at least 500 killed and 15,000+ arrested. Mandatory hijab, morality police, execution of protesters. But the Iranian people are not the government — Iran has one of the most educated and globally connected youth populations in the region, a thriving underground art and music scene, and a long history of resistance. The Islamic Republic does not represent Persia."},
+  {n:"Saudi Arabia",  f:"🇸🇦",r:"Asia/Oceania",  t:["bombing"],                     rank:61, uNote:null,note:"Active bombardment of Yemen since 2015 — one of the world's worst humanitarian disasters. Saudi-led coalition strikes have killed tens of thousands of civilians, destroyed hospitals, schools, water infrastructure, and ports, weaponizing famine in a country of 30 million. The coalition has used US-supplied and UK-supplied weapons, with Washington and London providing intelligence, refuelling, and diplomatic cover throughout. As of 2026, a formal ceasefire remains fragile and Saudi forces remain positioned for re-escalation. Beyond Yemen: Saudi Arabia is the linchpin of US strategy in the Gulf — the petrodollar system (oil priced in dollars) anchors US economic dominance and Saudi buys hundreds of billions in US arms. The Abraham Accords framework has brought Saudi Arabia into quiet normalization with Israel, including intelligence sharing, anti-Iran coordination, and economic integration, while the Palestinian cause is de facto abandoned by Gulf elites. MBS (Crown Prince Mohammed bin Salman) ordered the assassination and dismemberment of journalist Jamal Khashoggi in 2018; he faced no accountability and was rehabilitated by the Biden and Trump administrations. Domestic repression: feminist activists imprisoned for advocating for the right to drive. LGBTQ+ people face execution. Political prisoners tortured in detention. Sportswashing via LIV Golf, Newcastle United, Formula 1, and this World Cup."},
+  {n:"Qatar",         f:"🇶🇦",r:"Asia/Oceania",  t:["hegemon_lite"],                rank:55, uNote:null,note:"Hosts Al Udeid Air Base — the largest US military base in the Middle East (~10,000 troops), making Qatar the US's primary military hub in the Gulf. Absolute monarchy under the Al Thani family. Built the 2022 WC on migrant labor under the kafala system (estimated 6,500 migrant worker deaths during construction). Mediated the Gaza ceasefire negotiations with Egypt and the US — a role that requires close coordination with the US-Israel axis. Has indirect ties with Israel through mediation channels while officially not normalizing. Qatar was blockaded 2017-2021 by Saudi Arabia, UAE, and Bahrain partly for ties with Iran and Turkey — their geopolitical positioning is complex but ultimately within the US security umbrella."},
+  {n:"Iraq",          f:"🇮🇶",r:"Asia/Oceania",  t:[],                              rank:57, uNote:"Former British mandate, then destroyed by the US/UK invasion of 2003. A nation that has never known peace long enough to build a football program.",note:"Mesopotamia — between the Tigris and Euphrates — is where human civilization as we know it was invented: Sumer (4500 BCE) gave the world writing, mathematics, codified law, and cities. The Code of Hammurabi (1754 BCE) is one of the earliest written legal codes. Baghdad's House of Wisdom (8th–13th century) preserved and advanced Greek, Persian, and Indian knowledge while Europe was in its Dark Ages. The Mongol sack of Baghdad in 1258 — one of history's most catastrophic intellectual losses — destroyed the House of Wisdom; the Tigris reportedly ran black with the ink of burned books. The Sykes-Picot Agreement (1916): Britain and France secretly divided the Arab Middle East without consulting a single Arab. Britain drew Iraq's borders, merging three Ottoman provinces (Mosul, Baghdad, Basra) with no regard for ethnic, sectarian, or tribal realities — a map designed for extraction, not governance. British Mandate 1920–1932: when Iraqis revolted in 1920, Britain deployed the RAF to bomb civilian villages and used chemical weapons against the population. Winston Churchill explicitly approved. The oil was the point. Saddam Hussein took personal power in 1979. The Iran-Iraq War (1980–1988): Saddam invaded Iran with US support — the CIA shared intelligence while Saddam used chemical weapons on Iranian troops and, in 1988, on the Kurdish town of Halabja (3,000–5,000 civilians killed in a single attack). Reagan's administration blocked a UN condemnation. Gulf War 1991: Saddam invaded Kuwait; a US-led coalition expelled him but left him in power, then imposed sanctions. UNICEF estimated in 1999 that 500,000 Iraqi children had died as a result. US Secretary of State Madeleine Albright, asked on 60 Minutes if the price was worth it, replied: 'We think the price is worth it.' The 2003 invasion: no weapons of mass destruction existed. The Downing Street Memo and the UK's Chilcot Inquiry (2016) documented that intelligence was deliberately manipulated to justify a war decided before any evidence was assessed. Death toll estimates range from 150,000 to over one million. Abu Ghraib. White phosphorus in Fallujah. Sectarian civil war. And from the power vacuum: ISIS, which by 2014 controlled a territory the size of the UK and carried out genocide against the Yazidi people. Iraq has not known sustained peace since 1980 — a 45-year catastrophe authored largely in Washington and London."},
+  {n:"Australia",     f:"🇦🇺",r:"Asia/Oceania",  t:["hegemon_lite","colonizer"],     rank:27, uNote:null,note:"Important distinction: Australia was colonized by Britain, but Australia-as-a-state is itself a settler colonial structure that displaced and continues to marginalize Aboriginal and Torres Strait Islander peoples — who are the colonized. These are not the same thing. Recent politics under Albanese Labor (supposedly progressive): $14.35 billion spent on offshore detention since 2012, continued deportations to Nauru, passed the 'Anti-Fairness Bill' stripping procedural rights from deportees, UN committee found Australia exposed an asylum seeker to torture (2026), Voice to Parliament referendum failed with minimal progress since. 60% of incarcerated Australian youth are Aboriginal children. Regional Pacific hegemon, AUKUS nuclear submarine deal with US and UK."},
+  {n:"New Zealand",   f:"🇳🇿",r:"Asia/Oceania",  t:["colonizer","hegemon_lite"],     rank:85, uNote:"Only their third World Cup ever — rare qualifiers from a country where rugby dominates.",note:"British colonization beginning with the Treaty of Waitangi (1840) — signed under pressure, systematically violated within years. The New Zealand Land Wars (1845–1872): colonial forces and allied Māori fought against tribes resisting land confiscations; millions of acres were seized and never returned. The Māori population collapsed from an estimated 100,000–150,000 at contact to around 40,000 by 1900. Today the Treaty of Waitangi is constitutionally significant but contested — the current Luxon/National government's Treaty Principles Bill (2024) sparked the largest Māori-led protest march in decades (the hīkoi), as Māori communities saw it as an attempt to dilute Treaty rights. New Zealand is a member of Five Eyes — the Anglophone signals intelligence alliance (USA, UK, Australia, Canada, NZ) — making it part of the architecture of Western global surveillance. That said, NZ has genuine counterweights: it passed the Nuclear Free Zone Act in 1987, banning nuclear ships from its waters and triggering a diplomatic crisis with the US — one of the few times a small country refused American military pressure and held the line."},
+  {n:"Türkiye",       f:"🇹🇷",r:"Asia/Oceania",  t:[],                              rank:22, uNote:null,note:"Genuinely complicated. Erdoğan is authoritarian — jailed journalists, sacked 10 pro-Kurdish mayors, increasingly repressive of LGBTQ+ communities and opposition media. BUT: the PKK peace process is a genuine historic development. After 40 years of conflict, Öcalan called for disarmament (Feb 2025), PKK declared ceasefire (March 2025), PKK announced dissolution (May 2025), and fighters destroyed weapons publicly (July 2025). Turkey took a strong pro-Palestine stance, broke ties with Israel, participated in Gaza ceasefire negotiations, and is involved in Gaza reconstruction talks. Turkey played mediator between US and Iran. Not simply 'against.'"},
+  {n:"Uzbekistan",    f:"🇺🇿",r:"Asia/Oceania",  t:[],                              rank:50, uNote:"First World Cup in their history. A nation of 35 million people who have never seen their team on this stage before.",note:"Uzbekistan sits at the geographic heart of the ancient Silk Road — for centuries the wealthiest and most cosmopolitan trade corridor in the world, connecting China to the Mediterranean. Samarkand and Bukhara were among the most magnificent cities of the medieval world: centers of Islamic scholarship, astronomy, mathematics, and architecture that made contemporary Europe look provincial. Muhammad al-Khwarizmi (c. 780–850), from Khwarezm in western Uzbekistan, gave the world algebra and the algorithm — his name is literally the origin of the word. Ibn Sina (Avicenna, 980–1037), born near Bukhara, wrote the Canon of Medicine — the standard medical reference in Europe and the Islamic world for 600 years. Al-Biruni (973–1048), also from Khwarezm, calculated the Earth's circumference with remarkable accuracy and wrote across geology, anthropology, and astronomy. Timur (Tamerlane, 1336–1405): Turco-Mongol conqueror who built an empire from Anatolia to Delhi, made Samarkand the most spectacular city of his era, commissioned extraordinary architecture — and massacred millions. One of history's great contradictions: supreme patron of civilization, supreme destroyer of it. Russian conquest came in the 1860s–80s. The Soviet period brought literacy and industrialization alongside a catastrophic environmental crime: Uzbekistan became the USSR's primary cotton producer, and Soviet irrigation projects diverted the rivers feeding the Aral Sea so completely that it has virtually disappeared. Once the world's fourth-largest lake, it is now mostly a toxic desert of salt and pesticide — one of the greatest environmental disasters in human history. Islam Karimov ruled from the Soviet era until his death in 2016, one of Central Asia's most brutal dictators. The Andijan massacre (May 2005): security forces killed hundreds of protesters — the government claimed 187, independent estimates range far higher. Current president Shavkat Mirziyoyev has pursued gradual liberalization — tourism to Samarkand and Bukhara is now actively promoted — while remaining authoritarian. First World Cup ever."},
+  {n:"Jordan",        f:"🇯🇴",r:"Asia/Oceania",  t:[],                              rank:63, uNote:"First ever World Cup qualification in Jordan's history. Former British mandate, surrounded by ongoing regional conflicts.",note:"The Hashemite Kingdom sits at the geographic and political center of the most contested region on earth — bordered by Israel/Palestine, Syria, Iraq, and Saudi Arabia. The Hashemites ruled Mecca and Medina until Ibn Saud expelled them in 1925; Britain then installed Abdullah I as Emir of Transjordan in 1921, carving the territory from the British Mandate for Palestine. Jordan absorbed the West Bank and approximately 700,000 Palestinian refugees during the 1948 Nakba. It lost the West Bank — including East Jerusalem — to Israel in the 1967 Six-Day War. Jordan holds custodianship of Al-Aqsa Mosque and the holy sites of Jerusalem through the Islamic Waqf — a role of enormous symbolic weight as the Gaza genocide unfolds next door. Jordan hosts the largest Palestinian refugee population in the world: approximately 2 million registered UNRWA refugees, with millions more holding Jordanian citizenship. Roughly 70% of Jordan's population is of Palestinian origin — meaning Palestine is not an abstract political cause for most Jordanians, it is family. Jordan signed a peace treaty with Israel in 1994 (Wadi Araba), one of only two Arab states to do so — a decision that has never had genuine popular support. The Jordanian fans filling stadiums with keffiyehs and Palestinian flags at this World Cup are making a political gesture — and it is one of the most powerful ones at this tournament. It is also simply who they are. Both things are true, and the combination is exactly why it matters."},
+];
+
+const SCHEDULE=[
+  {d:"2026-06-11",t1:"Mexico",      t2:"South Africa",          g:"A",sc:"2-0"},
+  {d:"2026-06-11",t1:"Korea Republic",t2:"Czechia",             g:"A",sc:"2-1"},
+  {d:"2026-06-12",t1:"Canada",      t2:"Bosnia and Herzegovina",g:"B",sc:"1-1"},
+  {d:"2026-06-12",t1:"USA",         t2:"Paraguay",              g:"D",sc:"4-1"},
+  {d:"2026-06-13",t1:"Haiti",       t2:"Scotland",              g:"C",sc:"0-1"},
+  {d:"2026-06-13",t1:"Australia",   t2:"Türkiye",               g:"D",sc:"2-0"},
+  {d:"2026-06-13",t1:"Brazil",      t2:"Morocco",               g:"C",sc:"1-1"},
+  {d:"2026-06-13",t1:"Qatar",       t2:"Switzerland",           g:"B",sc:"1-1"},
+  {d:"2026-06-14",t1:"Côte d'Ivoire",t2:"Ecuador",              g:"E",sc:"1-0"},
+  {d:"2026-06-14",t1:"Germany",     t2:"Curaçao",               g:"E",sc:"7-1"},
+  {d:"2026-06-14",t1:"Netherlands", t2:"Japan",                 g:"F",sc:"2-2"},
+  {d:"2026-06-14",t1:"Sweden",      t2:"Tunisia",               g:"F",sc:"5-1"},
+  {d:"2026-06-15",t1:"Saudi Arabia",t2:"Uruguay",               g:"H",sc:"1-1"},
+  {d:"2026-06-15",t1:"Spain",       t2:"Cabo Verde",            g:"H",sc:"0-0"},
+  {d:"2026-06-15",t1:"IR Iran",     t2:"New Zealand",           g:"G",sc:"2-2"},
+  {d:"2026-06-15",t1:"Belgium",     t2:"Egypt",                 g:"G",sc:"1-1"},
+  {d:"2026-06-16",t1:"France",      t2:"Senegal",               g:"I",sc:"3-1"},
+  {d:"2026-06-16",t1:"Iraq",        t2:"Norway",                g:"I",sc:"1-4"},
+  {d:"2026-06-16",t1:"Argentina",   t2:"Algeria",               g:"J",sc:"3-0"},
+  {d:"2026-06-16",t1:"Austria",     t2:"Jordan",                g:"J",sc:"3-1"},
+  {d:"2026-06-17",t1:"Ghana",       t2:"Panama",                g:"L",sc:"1-0"},
+  {d:"2026-06-17",t1:"England",     t2:"Croatia",               g:"L",sc:"4-2"},
+  {d:"2026-06-17",t1:"Portugal",    t2:"Congo DR",              g:"K",sc:"1-1"},
+  {d:"2026-06-17",t1:"Uzbekistan",  t2:"Colombia",              g:"K",sc:"1-3"},
+  {d:"2026-06-18",t1:"Czechia",     t2:"South Africa",          g:"A",sc:"1-1"},
+  {d:"2026-06-18",t1:"Switzerland", t2:"Bosnia and Herzegovina",g:"B",sc:"4-1"},
+  {d:"2026-06-18",t1:"Canada",      t2:"Qatar",                 g:"B",sc:"6-0"},
+  {d:"2026-06-18",t1:"Mexico",      t2:"Korea Republic",        g:"A",sc:"1-0"},
+  {d:"2026-06-19",t1:"Brazil",      t2:"Haiti",                 g:"C",sc:"3-0"},
+  {d:"2026-06-19",t1:"Scotland",    t2:"Morocco",               g:"C",sc:"0-1"},
+  {d:"2026-06-19",t1:"Türkiye",     t2:"Paraguay",              g:"D",sc:"0-1"},
+  {d:"2026-06-19",t1:"USA",         t2:"Australia",             g:"D",sc:"2-0"},
+  {d:"2026-06-20",t1:"Germany",     t2:"Côte d'Ivoire",         g:"E",sc:"2-1"},
+  {d:"2026-06-20",t1:"Ecuador",     t2:"Curaçao",               g:"E",sc:"0-0"},
+  {d:"2026-06-20",t1:"Netherlands", t2:"Sweden",                g:"F",sc:"5-1"},
+  {d:"2026-06-20",t1:"Tunisia",     t2:"Japan",                 g:"F",sc:"0-4"},
+  {d:"2026-06-21",t1:"Uruguay",     t2:"Cabo Verde",            g:"H",sc:"2-2"},
+  {d:"2026-06-21",t1:"Spain",       t2:"Saudi Arabia",          g:"H",sc:"4-0"},
+  {d:"2026-06-21",t1:"Belgium",     t2:"IR Iran",               g:"G",sc:"0-0"},
+  {d:"2026-06-21",t1:"New Zealand", t2:"Egypt",                 g:"G",sc:"1-3"},
+  {d:"2026-06-22",t1:"Norway",      t2:"Senegal",               g:"I",sc:"3-2"},
+  {d:"2026-06-22",t1:"France",      t2:"Iraq",                  g:"I",sc:"3-0"},
+  {d:"2026-06-22",t1:"Argentina",   t2:"Austria",               g:"J",sc:"2-0"},
+  {d:"2026-06-22",t1:"Jordan",      t2:"Algeria",               g:"J",sc:"1-2"},
+  {d:"2026-06-23",t1:"England",     t2:"Ghana",                 g:"L"},
+  {d:"2026-06-23",t1:"Panama",      t2:"Croatia",               g:"L"},
+  {d:"2026-06-23",t1:"Portugal",    t2:"Uzbekistan",            g:"K"},
+  {d:"2026-06-23",t1:"Colombia",    t2:"Congo DR",              g:"K"},
+  {d:"2026-06-24",t1:"Scotland",    t2:"Brazil",                g:"C"},
+  {d:"2026-06-24",t1:"Morocco",     t2:"Haiti",                 g:"C"},
+  {d:"2026-06-24",t1:"Switzerland", t2:"Canada",                g:"B"},
+  {d:"2026-06-24",t1:"Bosnia and Herzegovina",t2:"Qatar",       g:"B"},
+  {d:"2026-06-24",t1:"Czechia",     t2:"Mexico",                g:"A"},
+  {d:"2026-06-24",t1:"South Africa",t2:"Korea Republic",        g:"A"},
+  {d:"2026-06-25",t1:"Curaçao",     t2:"Côte d'Ivoire",         g:"E"},
+  {d:"2026-06-25",t1:"Ecuador",     t2:"Germany",               g:"E"},
+  {d:"2026-06-25",t1:"Japan",       t2:"Sweden",                g:"F"},
+  {d:"2026-06-25",t1:"Tunisia",     t2:"Netherlands",           g:"F"},
+  {d:"2026-06-25",t1:"Türkiye",     t2:"USA",                   g:"D"},
+  {d:"2026-06-25",t1:"Paraguay",    t2:"Australia",             g:"D"},
+  {d:"2026-06-26",t1:"Norway",      t2:"France",                g:"I"},
+  {d:"2026-06-26",t1:"Senegal",     t2:"Iraq",                  g:"I"},
+  {d:"2026-06-26",t1:"Egypt",       t2:"IR Iran",               g:"G"},
+  {d:"2026-06-26",t1:"New Zealand", t2:"Belgium",               g:"G"},
+  {d:"2026-06-26",t1:"Cabo Verde",  t2:"Saudi Arabia",          g:"H"},
+  {d:"2026-06-26",t1:"Uruguay",     t2:"Spain",                 g:"H"},
+  {d:"2026-06-27",t1:"Panama",      t2:"England",               g:"L"},
+  {d:"2026-06-27",t1:"Croatia",     t2:"Ghana",                 g:"L"},
+  {d:"2026-06-27",t1:"Algeria",     t2:"Austria",               g:"J"},
+  {d:"2026-06-27",t1:"Jordan",      t2:"Argentina",             g:"J"},
+  {d:"2026-06-27",t1:"Colombia",    t2:"Portugal",              g:"K"},
+  {d:"2026-06-27",t1:"Congo DR",    t2:"Uzbekistan",            g:"K"},
+];
+
+function tm(n){return TEAMS.find(t=>t.n===n)}
+const REF_COUNTRIES={
+  "ARG":{"name":"Argentina","flag":"🇦🇷","tags":[],"note":"Argentina — Global South. The team is always against (1978 WC, Videla). The referee is just a person from Latin America."},
+  "BRA":{"name":"Brazil","flag":"🇧🇷","tags":[]},
+  "EGY":{"name":"Egypt","flag":"🇪🇬","tags":[]},
+  "NED":{"name":"Netherlands","flag":"🇳🇱","tags":["hegemon","colonizer"]},
+  "ALG":{"name":"Algeria","flag":"🇩🇿","tags":[]},
+  "VEN":{"name":"Venezuela","flag":"🇻🇪","tags":[]},
+  "SVN":{"name":"Slovenia","flag":"🇸🇮","tags":[]},
+  "HON":{"name":"Honduras","flag":"🇭🇳","tags":[]},
+  "ENG":{"name":"England","flag":"🏴󠁧󠁢󠁥󠁮󠁧󠁿","tags":["hegemon","colonizer"]},
+  "MAR":{"name":"Morocco","flag":"🇲🇦","tags":[]},
+  "USA":{"name":"USA","flag":"🇺🇸","tags":["special","hegemon","bombing"]},
+  "FRA":{"name":"France","flag":"🇫🇷","tags":["hegemon","colonizer"]},
+  "ITA":{"name":"Italy","flag":"🇮🇹","tags":["hegemon","colonizer"]},
+  "JOR":{"name":"Jordan","flag":"🇯🇴","tags":[]},
+  "MEX":{"name":"Mexico","flag":"🇲🇽","tags":[]},
+  "GAB":{"name":"Gabon","flag":"🇬🇦","tags":[]},
+  "GER":{"name":"Germany","flag":"🇩🇪","tags":["special","hegemon","colonizer"]},
+  "MTN":{"name":"Mauritania","flag":"🇲🇷","tags":[]},
+  "SWE":{"name":"Sweden","flag":"🇸🇪","tags":["far_right"]},
+  "QAT":{"name":"Qatar","flag":"🇶🇦","tags":[]},
+  "POR":{"name":"Portugal","flag":"🇵🇹","tags":["hegemon","colonizer"]},
+  "CHI":{"name":"Chile","flag":"🇨🇱","tags":[]},
+  "URU":{"name":"Uruguay","flag":"🇺🇾","tags":[]},
+  "ESP":{"name":"Spain","flag":"🇪🇸","tags":["hegemon","colonizer"]},
+  "UZB":{"name":"Uzbekistan","flag":"🇺🇿","tags":[]},
+  "SLV":{"name":"El Salvador","flag":"🇸🇻","tags":[]},
+  "POL":{"name":"Poland","flag":"🇵🇱","tags":[]},
+  "CHN":{"name":"China","flag":"🇨🇳","tags":["hegemon_lite"]},
+  "ROU":{"name":"Romania","flag":"🇷🇴","tags":[]},
+  "NOR":{"name":"Norway","flag":"🇳🇴","tags":[]},
+  "UAE":{"name":"UAE","flag":"🇦🇪","tags":[]},
+  "PAR":{"name":"Paraguay","flag":"🇵🇾","tags":["far_right"]},
+  "CAN":{"name":"Canada","flag":"🇨🇦","tags":["hegemon_lite"]},
+  "AUS":{"name":"Australia","flag":"🇦🇺","tags":["hegemon_lite","colonizer"]}
+};
+
+const MATCH_REF_DATA={
+  ["Mexico+South Africa"]:{code:"BRA",name:"Sampaio",flag:"🇧🇷"},
+  ["Korea Republic+Czechia"]:{code:"EGY",name:"Omar",flag:"🇪🇬"},
+  ["Canada+Bosnia and Herzegovina"]:{code:"ARG",name:"Tello",flag:"🇦🇷"},
+  ["USA+Paraguay"]:{code:"NED",name:"Makkelie",flag:"🇳🇱"},
+  ["Haiti+Scotland"]:{code:"ALG",name:"Ghorbal",flag:"🇩🇿"},
+  ["Australia+Türkiye"]:{code:"VEN",name:"Valenzuela",flag:"🇻🇪"},
+  ["Brazil+Morocco"]:{code:"SVN",name:"Vinčić",flag:"🇸🇮"},
+  ["Qatar+Switzerland"]:{code:"HON",name:"Martínez",flag:"🇭🇳"},
+  ["Côte d'Ivoire+Ecuador"]:{code:"ENG",name:"Oliver",flag:"🏴󠁧󠁢󠁥󠁮󠁧󠁿"},
+  ["Germany+Curaçao"]:{code:"MAR",name:"Jayed",flag:"🇲🇦",note:"Main ref from Morocco ✓ — but Australian support VAR Shaun Evans made a white power gesture on camera during this match. FIFA cleared him; FARE called for his removal. Germany 7-1 Curaçao, a colonial power destroying a 150k-person island nation at their first WC ever."},
+  ["Netherlands+Japan"]:{code:"USA",name:"Elfath",flag:"🇺🇸"},
+  ["Sweden+Tunisia"]:{code:"ARG",name:"Falcon",flag:"🇦🇷"},
+  ["Saudi Arabia+Uruguay"]:{code:"ITA",name:"Mariani",flag:"🇮🇹"},
+  ["Spain+Cabo Verde"]:{code:"JOR",name:"Makhadmeh",flag:"🇯🇴"},
+  ["IR Iran+New Zealand"]:{code:"MEX",name:"Ramos",flag:"🇲🇽"},
+  ["Belgium+Egypt"]:{code:"BRA",name:"Abatti",flag:"🇧🇷"},
+  ["France+Senegal"]:{code:"AUS",name:"Faghani",flag:"🇦🇺"},
+  ["Iraq+Norway"]:{code:"GAB",name:"Atcho",flag:"🇬🇦"},
+  ["Argentina+Algeria"]:{code:"POL",name:"Marciniak",flag:"🇵🇱"},
+  ["Austria+Jordan"]:{code:"MTN",name:"Beida",flag:"🇲🇷"},
+  ["Ghana+Panama"]:{code:"SWE",name:"Nyberg",flag:"🇸🇪"},
+  ["England+Croatia"]:{code:"FRA",name:"Turpin",flag:"🇫🇷"},
+  ["Portugal+Congo DR"]:{code:"QAT",name:"Al Jassim",flag:"🇶🇦"},
+  ["Uzbekistan+Colombia"]:{code:"ENG",name:"Taylor",flag:"🏴󠁧󠁢󠁥󠁮󠁧󠁿"},
+  ["Czechia+South Africa"]:{code:"USA",name:"Penso",flag:"🇺🇸"},
+  ["Switzerland+Bosnia and Herzegovina"]:{code:"POR",name:"Pinheiro",flag:"🇵🇹"},
+  ["Canada+Qatar"]:{code:"CHI",name:"Garay",flag:"🇨🇱"},
+  ["Mexico+Korea Republic"]:{code:"URU",name:"Tejera",flag:"🇺🇾"},
+  ["Brazil+Haiti"]:{code:"ESP",name:"Hernández",flag:"🇪🇸"},
+  ["Scotland+Morocco"]:{code:"UZB",name:"Tantashev",flag:"🇺🇿"},
+  ["Türkiye+Paraguay"]:{code:"SLV",name:"Barton",flag:"🇸🇻"},
+  ["USA+Australia"]:{code:"GER",name:"Zwayer",flag:"🇩🇪"},
+  ["Germany+Côte d'Ivoire"]:{code:"PAR",name:"Benitez",flag:"🇵🇾"},
+  ["Ecuador+Curaçao"]:{code:"CHN",name:"Ma Ning",flag:"🇨🇳"},
+  ["Netherlands+Sweden"]:{code:"ENG",name:"Oliver",flag:"🏴󠁧󠁢󠁥󠁮󠁧󠁿"},
+  ["Tunisia+Japan"]:{code:"ROU",name:"Kovacs",flag:"🇷🇴"},
+  ["Uruguay+Cabo Verde"]:{code:"NOR",name:"Eskas",flag:"🇳🇴"},
+  ["Spain+Saudi Arabia"]:{code:"BRA",name:"Claus",flag:"🇧🇷"},
+  ["Belgium+IR Iran"]:{code:"ARG",name:"Herrera",flag:"🇦🇷"},
+  ["New Zealand+Egypt"]:{code:"UAE",name:"Al Ali",flag:"🇦🇪"},
+  ["Norway+Senegal"]:{code:"BRA",name:"Sampaio",flag:"🇧🇷"},
+  ["France+Iraq"]:{code:"CAN",name:"Fischer",flag:"🇨🇦"},
+  ["Argentina+Austria"]:{code:"EGY",name:"Omar",flag:"🇪🇬"},
+  ["Jordan+Algeria"]:{code:"SVN",name:"Vinčić",flag:"🇸🇮"},
+  ["England+Ghana"]:{code:"HON",name:"Martínez",flag:"🇭🇳"},
+  ["Panama+Croatia"]:{code:"GAB",name:"Atcho",flag:"🇬🇦"},
+  ["Portugal+Uzbekistan"]:{code:"MAR",name:"Jayed",flag:"🇲🇦"},
+  ["Colombia+Congo DR"]:{code:"ITA",name:"Mariani",flag:"🇮🇹"}
+};
+function getMatchRef(t1n,t2n){return MATCH_REF_DATA[t1n+'+'+t2n]||MATCH_REF_DATA[t2n+'+'+t1n]||null;}
+function matchRefBadge(t1n,t2n){
+  const mr=getMatchRef(t1n,t2n);
+  if(!mr) return '';
+  const rq=refQuality(mr.code);
+  const col=rq.quality==='cursed'?'var(--d-tx)':rq.quality==='bad'||rq.quality==='mediocre'?'var(--w-tx)':'var(--tx3)';
+  return rf(mr.flag)+'<span style="font-size:11px;color:'+col+';margin-right:2px" title="Referee: '+mr.name+', '+rq.label+'">'+mr.name+'</span>';
+}
+
+function refQuality(code){
+  const rc=REF_COUNTRIES[code];
+  if(!rc) return {label:"Unknown country",note:"",quality:"neutral",score:0};
+  const t=rc.tags||[];
+  const sc=(t.includes("special")?10:0)+(t.includes("bombing")?5:0)+(t.includes("hegemon")?3:0)+(t.includes("colonizer")?2:0)+(t.includes("far_right")?2:0)+(t.includes("hegemon_lite")?1:0);
+  const label=`${rc.flag} ${rc.name}`;
+  if(t.includes("special")) return {label,note:rc.note||`${rc.name} is one of the teams we never root for. This match is completely cursed.`,quality:"cursed",score:sc};
+  if(sc>=5)  return {label,note:rc.note||`${rc.name} is a hegemonic/colonial power — the irony of rooting for their referee is not lost.`,quality:"bad",score:sc};
+  if(sc>=2)  return {label,note:rc.note||`${rc.name} has its own issues — not the cleanest arbitration, but bearable.`,quality:"mediocre",score:sc};
+  return {label,note:rc.note||`${rc.name} — Global South arbitration. As it should be.`,quality:"good",score:sc};
+}
+
+
+
+function calcScore(t){
+  return (t.t.includes("special")?10:0)+(t.t.includes("bombing")?5:0)
+        +(t.t.includes("hegemon")?3:0)+(t.t.includes("colonizer")?2:0)
+        +(t.t.includes("far_right")?2:0)+(t.t.includes("hegemon_lite")?1:0)+(t.t.includes("afrophobia")?2:0);
+}
+
+function colRel(t1,t2){
+  const c1=COLONIAL[t1.n]||[],c2=COLONIAL[t2.n]||[];
+  if(c1.includes(t2.n)) return {colonized:t1,colonizer:t2};
+  if(c2.includes(t1.n)) return {colonized:t2,colonizer:t1};
+  return null;
+}
+
+function detectUnderdog(t1,t2){
+  const r1=t1.rank||99, r2=t2.rank||99;
+  const diff=r1-r2; // positive = t1 is lower ranked (underdog)
+  const rankSide=diff>10?1:diff<-10?2:0;
+  const rankGap=Math.abs(diff);
+  const uTeam=rankSide===1?t1:rankSide===2?t2:null;
+  const topTeam=rankSide===1?t2:rankSide===2?t1:null;
+  const reasons=[];
+
+  if(uTeam&&topTeam){
+    const mag=rankGap>50?"massive":rankGap>30?"large":rankGap>15?"significant":"moderate";
+    reasons.push(`FIFA #${uTeam.rank} vs #${topTeam.rank} — ${mag} gap`);
+  }
+
+  // If no ranking gap, check for historical/political underdog status
+  if(rankSide===0){
+    if(t1.uNote&&!t2.uNote) return {side:1,team:t1,reasons:[t1.uNote]};
+    if(t2.uNote&&!t1.uNote) return {side:2,team:t2,reasons:[t2.uNote]};
+    return {side:0,team:null,reasons:[]};
+  }
+
+  if(uTeam.uNote) reasons.push(uTeam.uNote);
+  return {side:rankSide,team:uTeam,reasons,gap:rankGap};
+}
+
+function getVerdict(t1,t2,ref){
+  if(!t1||!t2) return null;
+  const s1=calcScore(t1),s2=calcScore(t2);
+  const sp1=t1.t.includes("special"),sp2=t2.t.includes("special");
+  const bo1=t1.t.includes("bombing"),bo2=t2.t.includes("bombing");
+  const he1=t1.t.includes("hegemon"),he2=t2.t.includes("hegemon");
+  const bd1=t1.t.includes("bombed"),bd2=t2.t.includes("bombed");
+  const cr=colRel(t1,t2);
+  const colonial=cr?`${cr.colonized.n} vs their former colonizer ${cr.colonizer.n} — that history doesn't disappear on a pitch.`:"";
+  const ud=detectUnderdog(t1,t2);
+  const udNote=ud.team?rf(ud.team.f)+" "+ud.team.n+" is the underdog: "+ud.reasons.join(". "):null;
+  const udBoost=(side,t)=>ud.side===side?` They're also the underdog here.`:"";
+
+  if((t1.n==="Argentina"&&t2.n==="Germany")||(t1.n==="Germany"&&t2.n==="Argentina"))
+    return {sc:"gray",label:"Turn off the TV",text:"Argentina × Germany — the remote control is the MVP. Turn it off, grab a beer, life goes on.",colonial:"",underdog:udNote,rootFor:null};
+
+  if(sp1&&sp2) return {sc:"purple",label:ref?`${ref} (referee)`:"The referee (Global South)",
+    text:`Two "always against" teams. At least you can watch — root for the referee${ref?` from ${ref}`:", as long as they're from the Global South"}.`,colonial:"",underdog:udNote,rootFor:"referee"};
+
+  if(sp1){
+    // If opponent also carries significant weight (score ≥ 2), no clean choice — go to referee
+    if(s2>=2) return {sc:"purple",
+      label:ref?`${ref} (referee)`:"The referee (Global South)",
+      text:`${t1.n} is non-negotiable: always against. But ${t2.n} also carries significant political weight. No clean side. Root for the referee${ref?` from ${ref}`:" if from the Global South"}.`,
+      colonial,underdog:udNote,rootFor:"referee"};
+    const b=bd2?` ${t2.n} is also under active bombardment.`:"";
+    return {sc:"green",label:`${t2.f} ${t2.n}`,text:`${t1.n} is non-negotiable: always against.${b}`,colonial,underdog:udNote,rootFor:t2.n};
+  }
+  if(sp2){
+    if(s1>=2) return {sc:"purple",
+      label:ref?`${ref} (referee)`:"The referee (Global South)",
+      text:`${t2.n} is non-negotiable: always against. But ${t1.n} also carries significant political weight. No clean side. Root for the referee${ref?` from ${ref}`:" if from the Global South"}.`,
+      colonial,underdog:udNote,rootFor:"referee"};
+    const b=bd1?` ${t1.n} is also under active bombardment.`:"";
+    return {sc:"green",label:`${t1.f} ${t1.n}`,text:`${t2.n} is non-negotiable: always against.${b}`,colonial,underdog:udNote,rootFor:t1.n};
+  }
+
+  if(bd1&&!bd2){const cv=he1?` Even with their colonial history, being under active bombardment takes precedence.`:"";
+    return {sc:"solidarity",label:`${t1.f} ${t1.n}`,text:`${t1.n} is under active bombardment.${t1.uNote?" "+t1.uNote:""} That changes everything.${cv}`,colonial,underdog:udNote,rootFor:t1.n};}
+  if(bd2&&!bd1){const cv=he2?` Even with their colonial history, being under active bombardment takes precedence.`:"";
+    return {sc:"solidarity",label:`${t2.f} ${t2.n}`,text:`${t2.n} is under active bombardment.${t2.uNote?" "+t2.uNote:""} That changes everything.${cv}`,colonial,underdog:udNote,rootFor:t2.n};}
+  if(bd1&&bd2) return {sc:"purple",label:"The referee (Global South)",text:"Both teams under active bombardment. Root for the referee.",colonial:"",underdog:udNote,rootFor:"referee"};
+
+  if(he1&&he2) return {sc:"purple",label:ref?`${ref} (referee)`:"The referee (Global South)",
+    text:ref?`Two hegemonic powers. The referee from ${ref} is the right call.`:"Two hegemonic powers. Root for the referee — if from the Global South.",colonial,underdog:udNote,rootFor:"referee"};
+
+  if(bo1&&!bo2){
+    if(s2>=5) return {sc:"purple",label:ref?`${ref} (referee)`:"The referee (Global South)",
+      text:`${t1.n} is actively bombing civilians — but ${t2.n} carries a hegemonic and colonial legacy that makes this genuinely difficult. No clean side. Root for the referee${ref?` from ${ref}`:" if from the Global South"}.`,
+      colonial,underdog:udNote,rootFor:"referee"};
+    return {sc:"red",label:`${t2.f} ${t2.n}`,text:`${t1.n} is actively bombing civilians. No neutral position.`,colonial,underdog:udNote,rootFor:t2.n};
+  }
+  if(bo2&&!bo1){
+    if(s1>=5) return {sc:"purple",label:ref?`${ref} (referee)`:"The referee (Global South)",
+      text:`${t2.n} is actively bombing civilians — but ${t1.n} carries a hegemonic and colonial legacy that makes this genuinely difficult. No clean side. Root for the referee${ref?` from ${ref}`:" if from the Global South"}.`,
+      colonial,underdog:udNote,rootFor:"referee"};
+    return {sc:"red",label:`${t1.f} ${t1.n}`,text:`${t2.n} is actively bombing civilians. No neutral position.`,colonial,underdog:udNote,rootFor:t1.n};
+  }
+  if(bo1&&bo2) return {sc:"red",label:"The referee (Global South)",text:`${t1.n} and ${t2.n} — two bombers. Root for the referee.`,colonial:"",underdog:udNote,rootFor:"referee"};
+
+  if(cr&&s1===0&&s2===0){const rt=cr.colonized;
+    return {sc:"amber",label:`${rt.f} ${rt.n}`,text:`${rt.n} vs their former colonizer — history is reason enough.${udBoost(rt===t1?1:2,rt)}`,colonial,underdog:udNote,rootFor:rt.n};}
+
+  const aph1=t1.t.includes("afrophobia"),aph2=t2.t.includes("afrophobia");
+  if(s1>0&&s2===0) return {sc:"amber",label:`${t2.f} ${t2.n}`,text:`Root for ${t2.n} — ${t1.n} ${whyAgainst(t1)}.`,colonial,underdog:udNote,rootFor:t2.n};
+  if(s2>0&&s1===0) return {sc:"amber",label:`${t1.f} ${t1.n}`,text:`Root for ${t1.n} — ${t2.n} ${whyAgainst(t2)}.`,colonial,underdog:udNote,rootFor:t1.n};
+  if(s1>s2) return {sc:"amber",label:`${t2.f} ${t2.n} (reluctantly)`,text:`Both teams carry geopolitical weight — ${t1.n} ${whyAgainst(t1)}, ${t2.n} ${whyAgainst(t2)}. ${t2.n} is the lesser evil.`,colonial,underdog:udNote,rootFor:t2.n};
+  if(s2>s1) return {sc:"amber",label:`${t1.f} ${t1.n} (reluctantly)`,text:`Both teams carry geopolitical weight — ${t2.n} ${whyAgainst(t2)}, ${t1.n} ${whyAgainst(t1)}. ${t1.n} is the lesser evil.`,colonial,underdog:udNote,rootFor:t1.n};
+  if(s1>0&&s1===s2) return {sc:"purple",label:ref?`${ref} (referee)`:"The referee (Global South)",text:`${t1.n} and ${t2.n} tied on geopolitical sins. Root for the referee if from the Global South.`,colonial,underdog:udNote,rootFor:"referee"};
+
+  // Helper: human-readable reason for rooting against a team
+  function whyAgainst(t){
+    if(t.t.includes('special'))     return 'is one of the teams we never root for';
+    if(t.t.includes('bombing'))     return 'is actively bombing civilian populations';
+    if(t.t.includes('far_right'))   return 'has a far-right government';
+    if(t.t.includes('afrophobia'))  return 'has an Afrophobia crisis';
+    if(t.t.includes('hegemon')&&t.t.includes('colonizer')) return 'carries a hegemonic and colonial legacy';
+    if(t.t.includes('hegemon'))     return 'is a hegemonic power';
+    if(t.t.includes('colonizer'))   return 'carries a colonial legacy';
+    if(t.t.includes('hegemon_lite'))return 'has emerging hegemonic tendencies';
+    return 'carries political weight';
+  }
+
+  // Underdog is context, not a verdict — viewer decides
+  // Build team context notes for free games
+  const ctx=[];
+  if(t1.note) ctx.push({f:t1.f,n:t1.n,note:t1.note});
+  if(t2.note) ctx.push({f:t2.f,n:t2.n,note:t2.note});
+  return {sc:"free",label:"Free game!",text:`Neither ${t1.n} nor ${t2.n} carry major political flags — but both have stories worth knowing.`,colonial,underdog:udNote,rootFor:null,teamContext:ctx.length?ctx:null};
+}
+
+const SC={
+  green:      {bg:"var(--s-bg)",tx:"var(--s-tx)",br:"var(--s-br)",ic:"ti-heart",        ey:"Verdict"},
+  solidarity: {bg:"var(--l-bg)",tx:"var(--l-tx)",br:"var(--l-br)",ic:"ti-shield-half",  ey:"Solidarity"},
+  red:        {bg:"var(--d-bg)",tx:"var(--d-tx)",br:"var(--d-br)",ic:"ti-alert-triangle",ey:"Active bombardment"},
+  amber:      {bg:"var(--w-bg)",tx:"var(--w-tx)",br:"var(--w-br)",ic:"ti-scale",         ey:"Geopolitical context"},
+  purple:     {bg:"var(--w-bg)",tx:"var(--w-tx)",br:"var(--w-br)",ic:"ti-flag",          ey:"Referee rule"},
+  gray:       {bg:"var(--g-bg)",tx:"var(--g-tx)",br:"var(--g-br)",ic:"ti-device-tv-off", ey:"Special verdict"},
+  free:       {bg:"var(--l-bg)",tx:"var(--l-tx)",br:"var(--l-br)",ic:"ti-heart",         ey:"Free game"},
+};
+
+function computeOC(rootFor,t1n,t2n,score){
+  if(!rootFor||rootFor==="free") return {type:"free"};
+  if(rootFor==="referee") return {type:"ref"};
+  const p=score.split("-").map(Number);
+  const t1w=p[0]>p[1],draw=p[0]===p[1];
+  const rootedT1=rootFor===t1n;
+  if(draw) return {type:"drew",team:rootFor,flag:(rootedT1?tm(t1n):tm(t2n)).f};
+  if(rootedT1&&t1w||!rootedT1&&!t1w&&!draw) return {type:"won",team:rootFor,flag:(rootedT1?tm(t1n):tm(t2n)).f};
+  return {type:"lost",team:rootFor,flag:(rootedT1?tm(t1n):tm(t2n)).f};
+}
+
+function ocPill(oc,big){
+  const cls={won:"oc-won",drew:"oc-drew",lost:"oc-lost",ref:"oc-ref",free:"oc-free"};
+  const txt={won:"✓ won",drew:"~ drew",lost:"✗ lost",ref:"root: referee",free:"free game"};
+  const cl=big?"oc":"mini-oc";
+  const flagPart=oc.team&&oc.type!=="free"&&oc.type!=="ref"?rf(oc.flag):"";
+  return '<span class="'+cl+' '+(cls[oc.type]||"oc-free")+'">'+flagPart+(txt[oc.type]||"?")+'</span>';
+}
+
+function showVerdict(v,t1n,t2n,pastScore){
+  if(!v) return;
+  const vDiv=document.getElementById("verdict");
+  const t1=tm(t1n),t2=tm(t2n);
+
+  // ── 1. Compute outcome FIRST so colors are right from the start ───────────
+  let st=SC[v.sc]||SC.free;
+  let ocResult=null;
+  let resultMsg="";
+
+  if(pastScore && v.rootFor && v.rootFor!=="referee" && v.rootFor!=="free"){
+    ocResult=computeOC(v.rootFor,t1n,t2n,pastScore);
+    if(ocResult.type==="won"){
+      st={bg:"var(--s-bg)",br:"var(--s-br)",tx:"var(--s-tx)",ic:"ti-trophy",ey:"Result: won ✓"};
+      resultMsg="The team we were rooting for won.";
+    } else if(ocResult.type==="lost"){
+      st={bg:"var(--d-bg)",br:"var(--d-br)",tx:"var(--d-tx)",ic:"ti-alert-triangle",ey:"Result: lost ✗"};
+      const rp=pastScore.split("-").map(Number);
+      const rWinner=rp[0]>rp[1]?tm(t1n):rp[1]>rp[0]?tm(t2n):null;
+      if(rWinner){
+        if(rWinner.t.includes("special")){
+        if(rWinner.n==="USA") resultMsg="USA won — the empire got the result. The worst outcome.";
+        else if(rWinner.n==="Germany") resultMsg="Germany won — they are one of the teams we never root for. The worst outcome.";
+        else if(rWinner.n==="Argentina") resultMsg="Argentina won — they are one of the teams we never root for. The worst outcome. Not an empire — just the team we always root against.";
+        else resultMsg=rWinner.n+" won — they are one of the teams we never root for. The worst outcome.";
+      }
+        else if(rWinner.t.includes("bombing")) resultMsg=rWinner.n+" won — a country actively bombing civilians took the points. A grim result.";
+        else if(calcScore(rWinner)>=5) resultMsg=rWinner.n+" won — a hegemonic power triumphed.";
+        else if(calcScore(rWinner)>=2) resultMsg=rWinner.n+" won — the more problematic side got the result.";
+        else resultMsg="The team we were rooting for lost. Football is not always just.";
+      } else { resultMsg="The team we were rooting for lost."; }
+    } else if(ocResult.type==="drew"){
+      st={bg:"var(--w-bg)",br:"var(--w-br)",tx:"var(--w-tx)",ic:"ti-minus",ey:"Result: drew ~"};
+      resultMsg="The team we were rooting for drew. Not ideal, but not a loss.";
+    }
+  } else if(pastScore && v.rootFor==="referee"){
+    // Referee rule — check who actually won
+    const rp=pastScore.split("-").map(Number);
+    const rWinner=rp[0]>rp[1]?tm(t1n):rp[1]>rp[0]?tm(t2n):null;
+    const rDraw=rp[0]===rp[1];
+    if(rDraw){ resultMsg="A draw — at least neither side fully triumphed."; }
+    else if(rWinner){
+      if(rWinner.t.includes("special")){
+        if(rWinner.n==="USA") resultMsg="USA won — the empire triumphed. The worst possible outcome.";
+        else if(rWinner.n==="Germany") resultMsg="Germany won — they are one of the teams we never root for. The worst possible outcome.";
+        else if(rWinner.n==="Argentina") resultMsg="Argentina won — they are one of the teams we never root for. The worst possible outcome. Videla's ghost in cleats.";
+        else resultMsg=rWinner.n+" won — they are one of the teams we never root for. The worst possible outcome.";
+      }
+      else if(rWinner.t.includes("bombing")) resultMsg=rWinner.n+" won — a country actively bombing civilians took the points. A grim result.";
+      else if(calcScore(rWinner)>=5) resultMsg=rWinner.n+" won — a hegemonic power triumphed. Not what we wanted from a lose-lose match.";
+      else if(calcScore(rWinner)>=2) resultMsg=rWinner.n+" won — the more problematic side got the result. Could have been worse.";
+      else resultMsg=rWinner.n+" won — not the cleanest outcome, but not the worst.";
+    }
+  }
+
+  // ── 1b. Pre-check referee: if verdict is "root for referee" but ref is cursed → TV off ──
+  const mrefAll=getMatchRef(t1n,t2n);
+  if(v.rootFor==='referee' && mrefAll){
+    const rqPre=refQuality(mrefAll.code);
+    if(rqPre.quality==="bad"||rqPre.quality==="cursed"){
+      v=Object.assign({},v,{
+        sc:'gray',
+        label:'Turn off the TV',
+        text:'Both teams are a no-root — and the referee is from '+rqPre.label+'. '+rqPre.note+' There is genuinely no one to root for in this match. The remote control is the MVP.',
+        rootFor:null
+      });
+      st=SC.gray;
+    }
+  }
+
+  // ── 2. Set card style with correct colors immediately ─────────────────────
+  vDiv.style.cssText="background:"+st.bg+";border-color:"+st.br+";color:"+st.tx;
+
+  // ── 3. Build HTML with correct colors ─────────────────────────────────────
+  let h='<button class="v-close" onclick="clearV()" aria-label="Close">\xd7</button>';
+  h+='<div class="v-eye"><i class="ti '+st.ic+'" aria-hidden="true" style="margin-right:6px"></i>'+st.ey+'</div>';
+  h+='<div class="v-teams">'+rf(t1?t1.f:'')+' '+t1n+' vs '+rf(t2?t2.f:'')+' '+t2n+'</div>';
+  h+='<div class="v-label">'+rfStr(v.label)+'</div>';
+  h+='<div class="v-text">'+v.text+'</div>';
+
+  // Past result section
+  if(pastScore && ocResult){
+    const p=pastScore.split("-").map(Number);
+    const scores=t1n+" "+p[0]+"\u2013"+p[1]+" "+t2n;
+    h+='<div class="v-section"><div class="v-section-label">Final result</div>';
+    h+='<div class="result-row"><span class="result-score">'+scores+'</span>'+ocPill(ocResult,true)+'</div>';
+    if(resultMsg) h+='<div style="font-size:13px;margin-top:5px;opacity:.85">'+resultMsg+'</div></div>';
+    else h+='</div>';
+  } else if(pastScore && v.rootFor==="referee"){
+    const p=pastScore.split("-").map(Number);
+    const scores=t1n+" "+p[0]+"\u2013"+p[1]+" "+t2n;
+    h+='<div class="v-section"><div class="v-section-label">Final result</div>';
+    // Only show "root: referee" pill if referee is actually from Global South
+    const rqCheck=mrefAll?refQuality(mrefAll.code):null;
+    const refPill=(rqCheck&&(rqCheck.quality==="bad"||rqCheck.quality==="cursed"))?'':'<span class="oc oc-ref">root: referee</span>';
+    h+='<div class="result-row"><span class="result-score">'+scores+'</span>'+refPill+'</div>';
+    if(resultMsg) h+='<div style="font-size:13px;margin-top:5px;opacity:.85">'+resultMsg+'</div></div>';
+    else h+='</div>';
+  }
+
+  // Underdog section
+  if(v.underdog){
+    h+='<div class="v-section"><div class="v-section-label"><i class="ti ti-trophy" style="margin-right:4px;font-size:11px"></i>The underdog</div>';
+    h+='<div style="font-size:13px">'+v.underdog+'</div></div>';
+  }
+
+  // Both team profiles — show note, fall back to uNote if note is empty
+  const noteT1=(t1&&t1.note)||'', noteT2=(t2&&t2.note)||'';
+  const uNoteT1=(t1&&t1.uNote)||'', uNoteT2=(t2&&t2.uNote)||'';
+  const displayT1=noteT1||uNoteT1, displayT2=noteT2||uNoteT2;
+  if(displayT1||displayT2){
+    h+='<div class="v-section"><div class="v-section-label">Both teams</div>';
+    if(t1&&displayT1) h+='<div style="font-size:13px;margin-bottom:8px"><strong>'+rf(t1.f)+' '+t1n+'</strong><div style="font-size:12px;opacity:.85;line-height:1.5;margin-top:2px">'+displayT1+'</div></div>';
+    if(t2&&displayT2) h+='<div style="font-size:13px"><strong>'+rf(t2.f)+' '+t2n+'</strong><div style="font-size:12px;opacity:.85;line-height:1.5;margin-top:2px">'+displayT2+'</div></div>';
+    h+='</div>';
+  }
+
+  // Colonial history section
+  if(v.colonial){
+    h+='<div class="v-section"><div class="v-section-label"><i class="ti ti-anchor" style="margin-right:4px;font-size:11px"></i>Colonial history</div>';
+    h+='<div style="font-size:13px;font-style:italic">'+v.colonial+'</div></div>';
+  }
+
+  // Referee section — quality note shown when ref is the verdict or the card is TV-off (non-Global-South ref)
+  if(mrefAll){
+    const rqAll=refQuality(mrefAll.code);
+    const isRefVerdict=v.rootFor==='referee';
+    let rSec='<div class="v-section"><div class="v-section-label"><i class="ti ti-whistle" style="margin-right:4px;font-size:11px"></i>Referee</div>';
+    rSec+='<div style="font-size:13px">'+rf(mrefAll.flag)+' <strong>'+mrefAll.name+'</strong> — '+rqAll.label;
+    if(isRefVerdict){
+      if(rqAll.quality==='good') rSec+=' <span style="font-size:12px;opacity:.7"> — Global South ✓</span>';
+      else if(rqAll.quality==='cursed') rSec+=' <span style="font-size:12px;color:var(--d-tx)"> — ⚠ '+rqAll.note+'</span>';
+      else rSec+=' <span style="font-size:12px;color:var(--w-tx)"> — ⚠ '+rqAll.note+'</span>';
+      if(mrefAll.note) rSec+='<div style="font-size:12px;margin-top:4px;line-height:1.5;opacity:.85">'+mrefAll.note+'</div>';
+    } else {
+      if(rqAll.quality==='good') rSec+=' <span style="font-size:12px;opacity:.7"> (Global South)</span>';
+      else if(rqAll.quality==='cursed') rSec+=' <span style="font-size:12px;color:var(--d-tx)"> — ⚠ not Global South</span>';
+      else if(rqAll.quality==='bad'||rqAll.quality==='mediocre') rSec+=' <span style="font-size:12px;color:var(--w-tx)"> — ⚠ not Global South</span>';
+    }
+    rSec+='</div></div>';
+    h+=rSec;
+  }
+
+  // For past matches: recolor card based on outcome
+  if(pastScore && v.rootFor && v.rootFor!=='referee' && v.rootFor!=='free'){
+    const ocFinal=computeOC(v.rootFor,t1n,t2n,pastScore);
+    if(ocFinal.type==='won')       st={bg:'var(--s-bg)',br:'var(--s-br)',tx:'var(--s-tx)',ic:st.ic,ey:st.ey};
+    else if(ocFinal.type==='lost') st={bg:'var(--d-bg)',br:'var(--d-br)',tx:'var(--d-tx)',ic:st.ic,ey:st.ey};
+    else if(ocFinal.type==='drew') st={bg:'var(--w-bg)',br:'var(--w-br)',tx:'var(--w-tx)',ic:st.ic,ey:st.ey};
+    vDiv.style.cssText='background:'+st.bg+';border-color:'+st.br+';color:'+st.tx;
+  }
+
+  vDiv.innerHTML=h;
+  vDiv.className='verdict show';
+  vDiv.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function matchDetail(t1n,t2n,pastScore){
+  const t1=tm(t1n),t2=tm(t2n);
+  if(!t1||!t2) return;
+  const v=getVerdict(t1,t2,'');
+  if(!v) return;
+  showVerdict(v,t1n,t2n,pastScore||null);
+}
+
+function clearV(){
+  const v=document.getElementById('verdict');
+  v.className='verdict'; v.innerHTML='';
+}
+
+const REGIONS=[...new Set(TEAMS.map(t=>t.r))];
+function buildOpts(ex){
+  let h='<option value="">Select...</option>';
+  REGIONS.forEach(r=>{
+    const ts=TEAMS.filter(t=>t.r===r&&t.n!==ex);
+    if(!ts.length) return;
+    h+=`<optgroup label="${r}">`;
+    ts.forEach(t=>{h+=`<option value="${t.n}">${t.f} ${t.n}</option>`;});
+    h+='</optgroup>';
+  });
+  return h;
+}
+function renderMeta(n,div){
+  const d=document.getElementById(div),t=TEAMS.find(x=>x.n===n);
+  if(!t){d.innerHTML='';return;}
+  const bs=[];
+  if(t.t.includes('special'))     bs.push({l:'special rule',c:'bd'});
+  if(t.t.includes('bombing'))     bs.push({l:'actively bombing',c:'bd'});
+  if(t.t.includes('bombed'))      bs.push({l:'being bombed',c:'bl'});
+  if(t.t.includes('hegemon'))     bs.push({l:'hegemonic power',c:'bw'});
+  if(t.t.includes('colonizer'))   bs.push({l:'historical colonizer',c:'bw'});
+  if(t.t.includes('far_right'))   bs.push({l:'far-right govt',c:'bp'});
+  if(t.t.includes('hegemon_lite'))bs.push({l:'emerging hegemon',c:'bw'});
+  if(t.t.includes('afrophobia'))  bs.push({l:'Afrophobia crisis',c:'bo'});
+  let h=`<div class="badges">${bs.map(b=>`<span class="badge ${b.c}">${b.l}</span>`).join('')}</div>`;
+  if(t.note) h+=`<p class="team-note">${t.note}</p>`;
+  d.innerHTML=h;
+}
+function onTC(){
+  const v1=document.getElementById('t1').value,v2=document.getElementById('t2').value;
+  document.getElementById('t2').innerHTML=buildOpts(v1);
+  document.getElementById('t1').innerHTML=buildOpts(v2);
+  document.getElementById('t1').value=v1; document.getElementById('t2').value=v2;
+  renderMeta(v1,'meta1'); renderMeta(v2,'meta2');
+  document.getElementById('go').disabled=!(v1&&v2&&v1!==v2);
+  clearV();
+}
+function analyze(){
+  const v1=document.getElementById('t1').value,v2=document.getElementById('t2').value;
+  const ref=(document.getElementById('ref')||{}).value||'';
+  const t1=tm(v1),t2=tm(v2);
+  if(!t1||!t2) return;
+  const v=getVerdict(t1,t2,ref.trim());
+  if(!v) return;
+  showVerdict(v,v1,v2,null);
+}
+
+function fmtD(d){return new Date(d+'T12:00:00Z').toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});}
+
+function buildSchedule(){
+  const byDate={};
+  SCHEDULE.forEach(function(m){if(!byDate[m.d])byDate[m.d]=[];byDate[m.d].push(m);});
+  const dayStats={};
+  Object.keys(byDate).forEach(function(d){
+    if(d>=TODAY) return;
+    var w=0,dr=0,l=0;
+    byDate[d].forEach(function(m){
+      var t1=tm(m.t1),t2=tm(m.t2);
+      if(!t1||!t2||!m.sc) return;
+      var v=getVerdict(t1,t2,'');
+      if(!v) return;
+      var p=m.sc.split('-').map(Number);
+      var isDraw=p[0]===p[1];
+      if(v.rootFor&&v.rootFor!=='referee'&&v.rootFor!=='free'){
+        // Clear pick: count win/draw/loss normally
+        var oc=computeOC(v.rootFor,m.t1,m.t2,m.sc);
+        if(oc.type==='won')w++; else if(oc.type==='drew')dr++; else if(oc.type==='lost')l++;
+      } else if(v.rootFor==='referee'){
+        // Referee rule: check TV off first
+        var _mr=getMatchRef(m.t1,m.t2);
+        var _tvOff=_mr&&(refQuality(_mr.code).quality==='bad'||refQuality(_mr.code).quality==='cursed');
+        if(!_tvOff){
+          if(isDraw) dr++; else l++; // any winner in a ref match = bad result
+        }
+      } else {
+        // Free game: count actual outcome (win = good, draw = neutral)
+        if(isDraw) dr++; else w++;
+      }
+    });
+    if(w+dr+l>0) dayStats[d]={w:w,dr:dr,l:l};
+  });
+
+  var html='';
+  Object.keys(byDate).sort().forEach(function(d){
+    var isPast=d<TODAY, isToday=d===TODAY;
+    var label=isToday?'Today \u2014 '+fmtD(d):fmtD(d);
+    var ds=dayStats[d];
+    var summary=ds?('<span class="day-stats"><span style="color:var(--s-tx)">\u2713'+ds.w+'</span><span style="color:var(--w-tx)">~'+ds.dr+'</span><span style="color:var(--d-tx)">\u2717'+ds.l+'</span></span>'):'';
+    html+='<div class="day-block"><div class="day-label'+(isToday?' today':'')+'">' +label+summary+'</div>';
+    byDate[d].forEach(function(m){
+      var t1=tm(m.t1),t2=tm(m.t2);
+      var v=t1&&t2?getVerdict(t1,t2,''):null;
+      // Pre-check: referee verdict + cursed ref → TV off (gray border)
+      var _isTvOff=false;
+      if(v&&v.rootFor==='referee'){var _pmr=getMatchRef(m.t1,m.t2);if(_pmr&&(refQuality(_pmr.code).quality==="bad"||refQuality(_pmr.code).quality==="cursed"))_isTvOff=true;}
+      var sc=_isTvOff?'sc-gray':v?('sc-'+(v.sc==='free'?'info':v.sc)):'sc-free';
+      var miniPill='';
+      if(isPast){
+        var oc=v?computeOC(v.rootFor,m.t1,m.t2,m.sc):{type:'free'};
+        // If "root for referee" but referee is cursed → TV off verdict; show gray pill
+        var tvOff=false;
+        if(oc.type==='ref'){var _mr=getMatchRef(m.t1,m.t2);if(_mr&&(refQuality(_mr.code).quality==="bad"||refQuality(_mr.code).quality==="cursed"))tvOff=true;}
+        // Custom pill logic based on verdict type + outcome
+        if(tvOff){
+          miniPill='<span class="mini-oc" style="background:var(--g-bg);color:var(--g-tx);border-color:var(--g-br)">&#128250; TV off</span>';
+        } else if(oc.type==='free' && m.sc){
+          // Free game: show actual outcome (green win, amber draw)
+          var _fp=m.sc.split('-').map(Number);
+          if(_fp[0]===_fp[1]){
+            miniPill='<span class="mini-oc oc-drew">free ~ drew</span>';
+          } else {
+            var _fw=_fp[0]>_fp[1]?t1:t2;
+            miniPill='<span class="mini-oc oc-won">'+rf(_fw?_fw.f:'')+'✓ won</span>';
+          }
+        } else if(oc.type==='ref' && m.sc){
+          // Referee verdict: draw = grey, any winner = bad (red)
+          var _rp=m.sc.split('-').map(Number);
+          if(_rp[0]===_rp[1]){
+            miniPill='<span class="mini-oc" style="background:var(--g-bg);color:var(--g-tx);border-color:var(--g-br)">~ drew (ref)</span>';
+          } else {
+            var _rw=_rp[0]>_rp[1]?t1:t2;
+            miniPill='<span class="mini-oc oc-lost">'+rf(_rw?_rw.f:'')+'✗ bad result</span>';
+          }
+        } else {
+          miniPill=ocPill(oc,false);
+        }
+        sc='sc-free'; // past matches: border always neutral, pill shows outcome
+        html+='<div class="match-row past '+sc+'" onclick="matchDetail(\''+esc(m.t1)+'\',\''+esc(m.t2)+'\',\''+(m.sc||'')+'\''+')" title="Click for full analysis">'
+          +'<div class="match-teams">'+rf(t1?t1.f:'')+' '+m.t1+' <span style="color:var(--tx3)">vs</span> '+rf(t2?t2.f:'')+' '+m.t2+'</div>'
+          +'<div class="match-right">'+matchRefBadge(m.t1,m.t2)+'<span class="match-group">Grp '+m.g+'</span><span class="match-score">'+m.sc+'</span>'+miniPill+'</div>'
+          +'</div>';
+      } else {
+        html+='<div class="match-row '+sc+'" onclick="matchDetail(\''+esc(m.t1)+'\',\''+esc(m.t2)+'\',null)" title="Click to analyze">'
+          +'<div class="match-teams">'+rf(t1?t1.f:'')+' '+m.t1+' <span style="color:var(--tx3)">vs</span> '+rf(t2?t2.f:'')+' '+m.t2+'</div>'
+          +'<div class="match-right">'+matchRefBadge(m.t1,m.t2)+'<span class="match-group">Grp '+m.g+'</span><i class="ti ti-arrow-right" style="font-size:14px;color:var(--i-tx)"></i></div>'
+          +'</div>';
+      }
+    });
+    html+='</div>';
+  });
+  document.getElementById('sched').innerHTML=html;
+}
+
+function switchTab(id){
+  document.querySelectorAll('.tab').forEach((b,i)=>{b.className='tab'+((['schedule','analyze','rules'][i]===id)?' active':'');});
+  document.querySelectorAll('.tab-panel').forEach(p=>{p.className='tab-panel'+(p.id==='tab-'+id?' active':'');});
+}
+
+document.addEventListener('DOMContentLoaded',function(){
+  document.getElementById('t1').innerHTML=buildOpts('');
+  document.getElementById('t2').innerHTML=buildOpts('');
+  buildSchedule();
+});
+
+</script>
+</body>
+</html>
