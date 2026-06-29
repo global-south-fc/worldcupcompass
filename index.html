@@ -16,6 +16,7 @@
       --s-bg:#f0fdf4;--s-tx:#15803d;--s-br:#bbf7d0;
       --d-bg:#fef2f2;--d-tx:#dc2626;--d-br:#fecaca;
       --w-bg:#fffbeb;--w-tx:#b45309;--w-br:#fde68a;
+      --o-bg:#fff7ed;--o-tx:#c2410c;--o-br:#fed7aa;
       --i-bg:#eff6ff;--i-tx:#1d4ed8;--i-br:#bfdbfe;
       --g-bg:#f8fafc;--g-tx:#64748b;--g-br:#e2e8f0;
       --l-bg:#f0f9ff;--l-tx:#0369a1;--l-br:#bae6fd;
@@ -27,6 +28,7 @@
       --s-bg:#052e16;--s-tx:#86efac;--s-br:#166534;
       --d-bg:#450a0a;--d-tx:#fca5a5;--d-br:#991b1b;
       --w-bg:#3b1f06;--w-tx:#fde68a;--w-br:#92400e;
+      --o-bg:#431407;--o-tx:#fb923c;--o-br:#9a3412;
       --i-bg:#172554;--i-tx:#93c5fd;--i-br:#1e40af;
       --g-bg:#1e293b;--g-tx:#94a3b8;--g-br:#334155;
       --l-bg:#0c2740;--l-tx:#7dd3fc;--l-br:#075985;
@@ -77,7 +79,7 @@
     .mini-oc{font-size:10px;font-weight:700;padding:1px 5px;border-radius:12px;border:1px solid;white-space:nowrap}
 
     .sc-green{border-left-color:#16a34a}.sc-solidarity{border-left-color:#0369a1}
-    .sc-red{border-left-color:#dc2626}.sc-amber{border-left-color:#d97706}
+    .sc-red{border-left-color:#dc2626}.sc-amber{border-left-color:#ea580c}
     .sc-purple{border-left-color:#eab308}.sc-gray{border-left-color:#64748b}
     .sc-info{border-left-color:#0ea5e9}
     .sc-free{border-left-color:var(--br2)}
@@ -115,7 +117,7 @@
     .legend-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:5px;align-items:center}
     .legend-label{font-weight:600;color:var(--tx2);margin-right:2px;white-space:nowrap}
     .lc{display:inline-flex;align-items:center;gap:4px;padding:2px 7px 2px 9px;border-radius:var(--rs);border:1px solid var(--br);border-left-width:3px;white-space:nowrap}
-    .lc.sc-green{border-left-color:#16a34a}.lc.sc-amber{border-left-color:#d97706}
+    .lc.sc-green{border-left-color:#16a34a}.lc.sc-amber{border-left-color:#ea580c}
     .lc.sc-red{border-left-color:#dc2626}.lc.sc-purple{border-left-color:#eab308}
     .lc.sc-gray{border-left-color:#64748b}.lc.sc-info{border-left-color:#0ea5e9}
     footer{padding-top:1.5rem;border-top:1px solid var(--br)}
@@ -139,6 +141,7 @@
     <button class="tab active" onclick="switchTab('schedule')"><i class="ti ti-calendar" style="margin-right:5px"></i>Schedule</button>
     <button class="tab" onclick="switchTab('analyze')"><i class="ti ti-search" style="margin-right:5px"></i>Custom match</button>
     <button class="tab" onclick="switchTab('rules')"><i class="ti ti-list-check" style="margin-right:5px"></i>Rules</button>
+    <button class="tab" onclick="switchTab('world')"><i class="ti ti-globe" style="margin-right:5px"></i>Brazil in the world</button>
   </div>
 
   <div class="verdict" id="verdict"></div>
@@ -216,6 +219,81 @@
     </div>
   </div>
 
+  <div class="tab-panel" id="tab-world">
+    <style>
+      .world-intro{font-size:14px;color:var(--tx2);line-height:1.75;margin-bottom:2rem}
+      .world-country{margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--br)}
+      .world-country:last-of-type{border-bottom:none}
+      .world-country-header{font-size:15px;font-weight:600;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+      .world-body{font-size:13px;color:var(--tx);line-height:1.8}
+      .world-body p{margin-bottom:10px}
+      .world-body p:last-child{margin-bottom:0}
+      .world-body a{color:var(--tx2);font-size:11px;opacity:.7;text-decoration:none;border-bottom:1px solid var(--br2)}
+      .world-body a:hover{opacity:1}
+      .world-body em{font-style:italic}
+      .world-divider{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--tx3);margin:2rem 0 1.25rem;padding-bottom:8px;border-bottom:1px solid var(--br)}
+    </style>
+
+    <p class="world-intro">The <em>amarelinha</em> isn't just a jersey. For billions of people in colonized, occupied, bombed, or simply forgotten countries, it stands for something — not the kind of power that dominates, but a country that plays beautifully without needing to crush anyone. That's not nostalgia talking. It's a political relationship built over decades, one that comes into focus every time the world sits down to watch a World Cup.</p>
+
+    <div class="world-divider">Why the world roots for Brazil</div>
+
+    <div class="world-country">
+      <div class="world-country-header">🇵🇸 Palestine</div>
+      <div class="world-body">
+        <p>In 1990, with Gaza under Israeli occupation and the First Intifada in its third year, two Palestinian brothers are trying to complete a World Cup sticker album. That's the setup of <em>Maradona's Legs</em>, a Palestinian short film that produced one of the most powerful images of solidarity with Brazilian football ever put on screen. After Brazil's elimination, one brother hands the other his Brazil jersey — not as consolation, but as inheritance. <em>"The next World Cup is ours."</em></p>
+        <p>On June 18, 2026, in Deir al-Balah, central Gaza, that image got its real-life sequel. Amputee players from Gaza Al-Irada walked onto the pitch in Brazil's yellow jersey, on crutches, in front of a crowd that had lost too much to count. A child who'd lost a limb was part of the opening ceremony. <a href="https://red.org.br/noticias/jogadores-amputados-entram-em-campo-com-camisetas-do-brasil-e-expoem-impacto-da-guerra-em-gaza/" target="_blank" rel="noopener">[RED, 23/06/2026]</a></p>
+        <p>Gaza Al-Irada — "the will of Gaza" — trains in the ruins of the Palestine Stadium. They were supposed to be in international qualifying this year. The war stopped that. <em>"Watching the World Cup is deeply painful for us. We are absent and forgotten."</em> <a href="https://www.aljazeera.com/features/longform/2026/6/11/world-celebrates-but-gaza-watches-the-world-cup-from-a-distance" target="_blank" rel="noopener">[Al Jazeera, 11/06/2026]</a></p>
+        <p>Fadi al-Arawi, a professional player in Gaza's First Division, watched the games on a shaky laptop in a school-turned-shelter in Khan Younis, drones overhead. <em>"Can you hear them? We can live or die, we can be bombed at any moment. But we push forward and we will watch the games."</em> At the Nuseirat refugee camp, someone rigged up a screen in a darkened market — dozens of people gathered around it between power cuts. <a href="https://www.cnnbrasil.com.br/esportes/futebol/copa-do-mundo/palestinos-deslocados-pela-guerra-assistem-a-copa-das-ruinas-de-gaza/" target="_blank" rel="noopener">[CNN Brasil / Reuters, 15/06/2026]</a></p>
+        <p>The Palestinian Football Association has documented 1,007 members of the sporting community killed since October 2023 — players, coaches, referees, officials. 285 facilities destroyed. The president of the Palestinian Football Federation couldn't get a visa to enter the host countries of this World Cup. He watched from outside.</p>
+      </div>
+    </div>
+
+    <div class="world-country">
+      <div class="world-country-header">🇱🇧 Lebanon</div>
+      <div class="world-body">
+        <p>In Lebanon, supporting Brazil at the World Cup is practically a parallel national tradition — passed down through families, fed by decades of diaspora, by relatives split between Beirut and São Paulo, by a connection that football makes visible every four years. <a href="https://www.ultrasawt.com/من-إرث-العائلة-إلى-تأثير-النجوم-المنتخبات-التي-يشجعها-اللبنانيون-في-كأس-العالم/" target="_blank" rel="noopener">[Ultra Sawt, 07/06/2026]</a></p>
+        <p>France 24 Arabic ran a segment on June 16 titled simply: <em>"Lebanon — Brazil's fans are turning heads."</em> <a href="https://www.france24.com/ar/برامج/باب-الويب/20260616-مونديال-2026" target="_blank" rel="noopener">[France 24 Arabic]</a> Streets in Tripoli covered in Brazilian flags, cafés full for every kickoff. <em>"Many Lebanese families have relatives or memories tied to Brazil. Rooting for them doesn't feel foreign — it's like rooting for a distant place that still lives in family memory."</em> <a href="https://www.amnaymag.com/لماذا-يشجع-اللبنانيون-منتخب-البرازيل/" target="_blank" rel="noopener">[Amna Magazine]</a></p>
+        <p>This is all happening while Israel has been bombing Lebanon since March 2026 — more than 3,500 people killed. On April 8, Black Wednesday, Israel hit over 150 locations across Beirut in ten minutes. At least 303 dead in residential neighborhoods, no warning. <a href="https://www.ohchr.org/en/press-releases/2026/04/un-experts-condemn-israels-unprecedented-bombing-lebanon-after-ceasefire-announcement" target="_blank" rel="noopener">[OHCHR, 15/04/2026]</a> The cafés are still full. The <em>canarinha</em> is part of that — a country that never bombed them, never colonized them, that took them in when they had to go.</p>
+      </div>
+    </div>
+
+    <div class="world-country">
+      <div class="world-country-header">🌍 Africa</div>
+      <div class="world-body">
+        <p>53 African countries declared support for Brazil at this World Cup. Videos went viral from Zimbabwe, South Africa, Uganda, Cameroon — fans from different countries appearing together, all in yellow. <a href="https://www.tiktok.com/discover/africanos-torcendo-pelo-brasil-na-copa" target="_blank" rel="noopener">[TikTok/worldcup2026]</a></p>
+        <p>The moment that cut through: kids from the Ugandan project Smash Talent Kids Africa — who perform to fund their own schooling — danced to the Brazil anthem and went viral. The line that kept circulating: <em>"They root for Brazil more than Brazilians do."</em> <a href="https://smashtalentkidsafrica.org" target="_blank" rel="noopener">[Smash Talent Kids Africa]</a></p>
+        <p>None of this is accidental. The style of football the whole world calls Brazilian — the ginga, the dribble, the improvisation — came to Brazil through enslaved Africans. It was born in the bodies and the culture of people taken by force from the Gulf of Guinea, from Angola, from Congo. When a Ugandan kid dances to the Seleção's song, something is being completed — a circle the Atlantic slave trade opened five hundred years ago.</p>
+      </div>
+    </div>
+
+    <div class="world-country">
+      <div class="world-country-header">🇭🇹 Haiti</div>
+      <div class="world-body">
+        <p>For 52 years without a World Cup, Haiti rooted for Brazil. Green and yellow on houses and streets every four years — the <em>amarelinha</em> stood in for the team that wasn't there. <a href="https://www.infomoney.com.br/esportes/jogo-da-paz-missao-da-onu-e-migracao-as-relacoes-entre-brasil-e-haiti/" target="_blank" rel="noopener">[Infomoney]</a></p>
+        <p>But that story has a shadow. In 2004, Brazil rolled into Port-au-Prince on military vehicles — the reigning world champions, Ronaldo and Ronaldinho on board, playing a friendly that was also a tool of MINUSTAH, the UN occupation that Brazil was commanding. A million Haitians came out to line the streets. And while that was happening, Brazilian troops were repressing protesters, soldiers were implicated in abuse of civilians, and UN peacekeepers introduced cholera to the country — 10,000 people dead. <a href="https://midianinja.org/90-minutos-de-alegria-em-meio-a-decadas-de-guerra-brasil-e-haiti-do-jogo-da-paz-a-copa-do-mundo/" target="_blank" rel="noopener">[Mídia NINJA]</a></p>
+        <p>Haiti is the sharpest example of what happens when Brazil betrays what the jersey is supposed to mean. Two Black nations in the Americas, both shaped by slavery and empire — and Brazil showed up in uniform where it should have shown up as a friend.</p>
+      </div>
+    </div>
+
+    <div class="world-country">
+      <div class="world-country-header">🇨🇼 Curaçao</div>
+      <div class="world-body">
+        <p>Until this World Cup, most football fans in Curaçao had never had a team to root for — so they rooted for Brazil or Argentina instead. A fan who made the trip to the US for the historic debut told FIFA: <em>"It's wild to think we used to support other teams — Brazil, the Netherlands, Argentina — and now we might be playing against them."</em> <a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/curacao-reaction-fans" target="_blank" rel="noopener">[FIFA.com]</a></p>
+        <p>In 2026, Curaçao finally had its own team. But decades of loving the <em>canarinha</em> don't vanish with a qualification — they become something else: now we get to play against them.</p>
+      </div>
+    </div>
+
+    <div class="world-divider">The jersey and who wears it</div>
+
+    <div class="world-body" style="margin-bottom:2rem">
+      <p>What do these have in common: an amputee player in Gaza wearing the <em>amarelinha</em> in the rubble of Deir al-Balah, a Ugandan kid dancing to the Seleção's anthem to pay for school, a café in Beirut full while Israel bombs the south of the country, and decades of green and yellow on the streets of Port-au-Prince — even after Brazil showed up in military vehicles?</p>
+      <p>Most people who root for Brazil couldn't tell you exactly why. There's the beautiful game, the five titles, the way Brazilians celebrate. But something operates underneath all of that — a jersey doesn't just carry colors, it carries the way a country moves through the world. When that movement is domination, violence, contempt, people feel it and they don't wear it. When it's something else, they feel that too — and they wear it, even when they can't quite say what they're responding to.</p>
+      <p>That feeling is fragile. It depends on who's governing, what choices are being made, whether Brazil is acting as part of the Global South or angling to be a junior partner of the Western order. When Brazil is honest about where it stands — cutting ties with Israel, refusing to be a satellite, treating small countries as real counterparts — the world notices. When it goes the other way — falling in line with Washington, treating Southern multilateralism as a threat, arriving in uniform where it should have arrived as an ally — the world notices that too.</p>
+      <p>The World Cup doesn't resolve any of this. But it puts it on display, every four years, more clearly than any political speech. When the <em>canarinha</em> walks out, the whole world is watching — and part of that world is rooting for something that has nothing to do with football.</p>
+    </div>
+  </div>
+
   <footer>
     <p>⚠️ Work in progress — rules, data, and verdicts are being updated as the tournament unfolds. Referee assignments may change close to kickoff.</p>
     <p>The views expressed here reflect the personal opinions of the author. Football is never just football.</p>
@@ -276,7 +354,7 @@ function rfStr(s){
   return result;
 }
 
-const TODAY="2026-06-26";
+const TODAY="2026-06-28";
 
 const COLONIAL={
   "Algeria":["France"],"Morocco":["France","Spain"],"Tunisia":["France"],
@@ -409,16 +487,33 @@ const SCHEDULE=[
   {d:"2026-06-25",t1:"Paraguay",    t2:"Australia",             g:"D",sc:"0-0"},
   {d:"2026-06-26",t1:"Norway",      t2:"France",                g:"I",sc:"1-4"},
   {d:"2026-06-26",t1:"Senegal",     t2:"Iraq",                  g:"I",sc:"5-0"},
-  {d:"2026-06-26",t1:"Egypt",       t2:"IR Iran",               g:"G"},
-  {d:"2026-06-26",t1:"New Zealand", t2:"Belgium",               g:"G"},
-  {d:"2026-06-26",t1:"Cabo Verde",  t2:"Saudi Arabia",          g:"H"},
-  {d:"2026-06-26",t1:"Uruguay",     t2:"Spain",                 g:"H"},
-  {d:"2026-06-27",t1:"Panama",      t2:"England",               g:"L"},
-  {d:"2026-06-27",t1:"Croatia",     t2:"Ghana",                 g:"L"},
-  {d:"2026-06-27",t1:"Algeria",     t2:"Austria",               g:"J"},
-  {d:"2026-06-27",t1:"Jordan",      t2:"Argentina",             g:"J"},
-  {d:"2026-06-27",t1:"Colombia",    t2:"Portugal",              g:"K"},
-  {d:"2026-06-27",t1:"Congo DR",    t2:"Uzbekistan",            g:"K"},
+  {d:"2026-06-26",t1:"Egypt",       t2:"IR Iran",               g:"G",sc:"1-1"},
+  {d:"2026-06-26",t1:"New Zealand", t2:"Belgium",               g:"G",sc:"1-5"},
+  {d:"2026-06-26",t1:"Cabo Verde",  t2:"Saudi Arabia",          g:"H",sc:"0-0"},
+  {d:"2026-06-26",t1:"Uruguay",     t2:"Spain",                 g:"H",sc:"0-1"},
+  {d:"2026-06-27",t1:"Panama",      t2:"England",               g:"L",sc:"0-2"},
+  {d:"2026-06-27",t1:"Croatia",     t2:"Ghana",                 g:"L",sc:"2-1"},
+  {d:"2026-06-27",t1:"Algeria",     t2:"Austria",               g:"J",sc:"3-3"},
+  {d:"2026-06-27",t1:"Jordan",      t2:"Argentina",             g:"J",sc:"1-3"},
+  {d:"2026-06-27",t1:"Colombia",    t2:"Portugal",              g:"K",sc:"0-0"},
+  {d:"2026-06-27",t1:"Congo DR",    t2:"Uzbekistan",            g:"K",sc:"3-1"},
+  // Round of 32
+  {d:"2026-06-28",t1:"South Africa",    t2:"Canada",               g:"R32",sc:"0-1"},
+  {d:"2026-06-29",t1:"Brazil",          t2:"Japan",                g:"R32"},
+  {d:"2026-06-29",t1:"Germany",         t2:"Paraguay",             g:"R32"},
+  {d:"2026-06-29",t1:"Netherlands",     t2:"Morocco",              g:"R32"},
+  {d:"2026-06-30",t1:"Côte d'Ivoire",   t2:"Norway",               g:"R32"},
+  {d:"2026-06-30",t1:"France",          t2:"Sweden",               g:"R32"},
+  {d:"2026-06-30",t1:"Mexico",          t2:"Ecuador",              g:"R32"},
+  {d:"2026-07-01",t1:"England",         t2:"Congo DR",             g:"R32"},
+  {d:"2026-07-01",t1:"Belgium",         t2:"Senegal",              g:"R32"},
+  {d:"2026-07-01",t1:"USA",             t2:"Bosnia and Herzegovina",g:"R32"},
+  {d:"2026-07-02",t1:"Spain",           t2:"Austria",              g:"R32"},
+  {d:"2026-07-02",t1:"Portugal",        t2:"Croatia",              g:"R32"},
+  {d:"2026-07-02",t1:"Switzerland",     t2:"Algeria",              g:"R32"},
+  {d:"2026-07-03",t1:"Australia",       t2:"Egypt",                g:"R32"},
+  {d:"2026-07-03",t1:"Argentina",       t2:"Cabo Verde",           g:"R32"},
+  {d:"2026-07-03",t1:"Colombia",        t2:"Ghana",                g:"R32"},
 ];
 
 function tm(n){return TEAMS.find(t=>t.n===n)}
@@ -534,6 +629,7 @@ const MATCH_REF_DATA={
   ["Algeria+Austria"]:{code:"UZB",name:"Tantashev",flag:"🇺🇿",note:"An Uzbekistani referee — from a country colonized by Russia — officiating Algeria vs Austria. Algeria defeated French colonialism. Austria is governed by a party with Nazi roots. A Global South referee for one of the most politically charged matchups of the tournament."},
   ["Jordan+Argentina"]:{code:"ROU",name:"Kovacs",flag:"🇷🇴"},
   ["Colombia+Portugal"]:{code:"AUS",name:"Faghani",flag:"🇦🇺",note:"Alireza Faghani — Iranian-born, Australian-registered — refereeing Colombia vs Portugal, a former Spanish colony against the country that built one of history's most extensive empires. A complicated referee choice for a complicated match."},
+  ["South Africa+Canada"]:{code:"POR",name:"Pinheiro",flag:"🇵🇹",note:"João Pinheiro from Portugal — a country that transported more enslaved Africans than any other nation (~5.8 million), colonized Angola and Mozambique until 1975, and whose slave trade infrastructure shaped southern Africa's entire colonial economy — refereeing a match involving South Africa. The VAR is Carlos Del Cerro Grande from Spain, another major colonial empire. The assistant VAR includes Mastrangelo from Argentina — one of the teams we never root for. A deeply uncomfortable refereeing panel for this particular fixture."},
   ["Congo DR+Uzbekistan"]:{code:"GER",name:"Zwayer",flag:"🇩🇪",note:"A German referee for DR Congo — the country whose population was halved by Belgian colonial atrocities, whose first democratic leader was assassinated with Western involvement. Germany is not a neutral party in the history of African colonialism (Namibia, Tanzania, Cameroon — the first genocide of the 20th century). One of the most inappropriate refereeing assignments of this tournament."}
 };
 function getMatchRef(t1n,t2n){return MATCH_REF_DATA[t1n+'+'+t2n]||MATCH_REF_DATA[t2n+'+'+t1n]||null;}
@@ -718,7 +814,7 @@ const SC={
   green:      {bg:"var(--s-bg)",tx:"var(--s-tx)",br:"var(--s-br)",ic:"ti-heart",        ey:"Verdict"},
   solidarity: {bg:"var(--l-bg)",tx:"var(--l-tx)",br:"var(--l-br)",ic:"ti-shield-half",  ey:"Solidarity"},
   red:        {bg:"var(--d-bg)",tx:"var(--d-tx)",br:"var(--d-br)",ic:"ti-alert-triangle",ey:"Active bombardment"},
-  amber:      {bg:"var(--w-bg)",tx:"var(--w-tx)",br:"var(--w-br)",ic:"ti-scale",         ey:"Geopolitical context"},
+  amber:      {bg:"var(--o-bg)",tx:"var(--o-tx)",br:"var(--o-br)",ic:"ti-scale",         ey:"Geopolitical context"},
   purple:     {bg:"var(--w-bg)",tx:"var(--w-tx)",br:"var(--w-br)",ic:"ti-flag",          ey:"Referee rule"},
   gray:       {bg:"var(--g-bg)",tx:"var(--g-tx)",br:"var(--g-br)",ic:"ti-device-tv-off", ey:"Special verdict"},
   free:       {bg:"var(--l-bg)",tx:"var(--l-tx)",br:"var(--l-br)",ic:"ti-heart",         ey:"Free game"},
@@ -1060,12 +1156,12 @@ function buildSchedule(){
         sc='sc-free'; // past matches: border always neutral, pill shows outcome
         html+='<div class="match-row past '+sc+'" onclick="matchDetail(\''+esc(m.t1)+'\',\''+esc(m.t2)+'\',\''+(m.sc||'')+'\''+')" title="Click for full analysis">'
           +'<div class="match-teams">'+rf(t1?t1.f:'')+' '+m.t1+' <span style="color:var(--tx3)">vs</span> '+rf(t2?t2.f:'')+' '+m.t2+'</div>'
-          +'<div class="match-right">'+matchRefBadge(m.t1,m.t2)+'<span class="match-group">Grp '+m.g+'</span><span class="match-score">'+m.sc+'</span>'+miniPill+'</div>'
+          +'<div class="match-right">'+matchRefBadge(m.t1,m.t2)+'<span class="match-group">'+(m.g==='R32'?'R-32':m.g==='R16'?'R-16':m.g==='QF'?'QF':m.g==='SF'?'SF':m.g==='F'?'Final':'Grp '+m.g)+'</span><span class="match-score">'+m.sc+'</span>'+miniPill+'</div>'
           +'</div>';
       } else {
         html+='<div class="match-row '+sc+'" onclick="matchDetail(\''+esc(m.t1)+'\',\''+esc(m.t2)+'\',null)" title="Click to analyze">'
           +'<div class="match-teams">'+rf(t1?t1.f:'')+' '+m.t1+' <span style="color:var(--tx3)">vs</span> '+rf(t2?t2.f:'')+' '+m.t2+'</div>'
-          +'<div class="match-right">'+matchRefBadge(m.t1,m.t2)+'<span class="match-group">Grp '+m.g+'</span><i class="ti ti-arrow-right" style="font-size:14px;color:var(--i-tx)"></i></div>'
+          +'<div class="match-right">'+matchRefBadge(m.t1,m.t2)+'<span class="match-group">'+(m.g==='R32'?'R-32':m.g==='R16'?'R-16':m.g==='QF'?'QF':m.g==='SF'?'SF':m.g==='F'?'Final':'Grp '+m.g)+'</span><i class="ti ti-arrow-right" style="font-size:14px;color:var(--i-tx)"></i></div>'
           +'</div>';
       }
     });
@@ -1075,7 +1171,7 @@ function buildSchedule(){
 }
 
 function switchTab(id){
-  document.querySelectorAll('.tab').forEach((b,i)=>{b.className='tab'+((['schedule','analyze','rules'][i]===id)?' active':'');});
+  document.querySelectorAll('.tab').forEach((b,i)=>{b.className='tab'+((['schedule','analyze','rules','world'][i]===id)?' active':'');});
   document.querySelectorAll('.tab-panel').forEach(p=>{p.className='tab-panel'+(p.id==='tab-'+id?' active':'');});
 }
 
