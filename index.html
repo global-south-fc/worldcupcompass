@@ -6,6 +6,7 @@
   <title>The Geopolitical Football Compass — 2026 World Cup</title>
   <meta name="description" content="A geopolitical guide to the 2026 World Cup — who to root for based on colonial history, active conflicts, and political context." />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.7.0/dist/tabler-icons.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/css/flag-icons.min.css" />
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
@@ -126,9 +127,7 @@
     footer a{color:var(--tx2)}
     @media(max-width:480px){.match-grid{grid-template-columns:1fr 18px 1fr;gap:5px}}
   
-    .fc{display:inline-block;font-size:9px;font-weight:700;padding:0 4px;height:16px;line-height:16px;
-        border-radius:3px;background:rgba(128,128,128,.18);color:var(--tx2);
-        letter-spacing:.04em;vertical-align:middle;margin-right:3px;font-style:normal}
+    .fc{width:20px;height:15px;border-radius:2px;vertical-align:middle;margin-right:4px;flex-shrink:0;box-shadow:0 0 0 1px rgba(0,0,0,.1);display:inline-block}
   </style>
 </head>
 <body>
@@ -336,7 +335,13 @@ function esc(s){return s.replace(/'/g,"\\'")}
 function rf(flag){
   if(!flag) return '';
   var code=flagToCode(flag);
-  return '<em class="fc">'+(code||'?')+'</em>';
+  if(!code) return '';
+  var fiCode;
+  if(code==='SCO') fiCode='gb-sct';
+  else if(code==='ENG') fiCode='gb-eng';
+  else if(code==='WAL') fiCode='gb-wls';
+  else fiCode=code.toLowerCase();
+  return '<span class="fi fi-'+fiCode+' fc"></span>';
 }
 // Process a string that may contain flag emoji, replacing each with rf()
 function rfStr(s){
